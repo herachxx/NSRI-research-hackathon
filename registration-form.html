@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Summer Research Hackathon 2026</title>
+<meta name="description" content="Register for NSRI's Summer Research Hackathon 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   Scoped to .nsri-reg so this block can be dropped into any host page
+   with minimal risk of colliding with existing site styles.
+   For zero risk, embed via <iframe src="registration-form.html"> instead -
+   see the integration notes at the bottom of this file.
+   ===================================================================== */
+.nsri-reg{
+  --ink:#10182B;
+  --navy-deep:#0B1626;
+  --paper:#FCFCFB;
+  --paper-dim:#F1F3F6;
+  --line:#E2E5EA;
+  --muted:#4B5563;
+  --blue:#1F5FD1;
+  --blue-hover:#1A52BC;
+  --blue-text:#1647A8;
+  --blue-soft:#EAF1FC;
+  --gold-text:#8A6322;
+  --gold-soft:#FBF1DD;
+  --red:#B3261E;
+  --radius-sm:6px;
+  --radius-md:10px;
+  --radius-lg:18px;
+  --font-display:"Newsreader", Georgia, serif;
+  --font-body:"IBM Plex Sans", -apple-system, Segoe UI, sans-serif;
+  --font-mono:"IBM Plex Mono", "SF Mono", monospace;
+
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--paper-dim);
+  padding:clamp(1.5rem,5vw,3.5rem) 1rem;
+  box-sizing:border-box;
+  line-height:1.55;
+}
+.nsri-reg *{box-sizing:border-box;}
+.nsri-reg :focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px;}
+
+.nsri-reg__shell{max-width:640px;margin:0 auto;}
+.nsri-reg__card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:clamp(1.75rem,5vw,3rem);box-shadow:0 12px 32px rgba(16,24,43,0.06);
+}
+.nsri-reg__head{margin-bottom:2.2rem;}
+.nsri-reg__eyebrow{
+  font-family:var(--font-mono);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue-text);display:flex;align-items:center;gap:.5rem;margin:0 0 .8rem;
+}
+.nsri-reg__eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue);display:inline-block;}
+.nsri-reg__head h1{
+  font-family:var(--font-display);font-weight:600;font-size:clamp(1.6rem,4vw,2.1rem);margin:0 0 .5rem;color:var(--ink);
+}
+.nsri-reg__sub{color:var(--muted);font-size:.96rem;margin:0;}
+.nsri-reg__required-note{font-size:.82rem;color:var(--muted);margin-top:.9rem;}
+
+.nsri-reg .field{margin-bottom:1.5rem;}
+.nsri-reg .field-group{
+  border:none;padding:0;margin:0 0 1.5rem;
+}
+.nsri-reg legend{
+  font-weight:600;font-size:.94rem;color:var(--ink);padding:0;margin:0 0 .7rem;
+  font-family:var(--font-body);
+}
+.nsri-reg label{display:block;font-size:.9rem;font-weight:500;color:var(--ink);margin-bottom:.45rem;}
+.nsri-reg .req{color:var(--gold-text);margin-left:.2rem;}
+.nsri-reg input[type="text"],
+.nsri-reg input[type="email"],
+.nsri-reg select,
+.nsri-reg textarea{
+  width:100%;font-family:var(--font-body);font-size:.96rem;color:var(--ink);
+  padding:.75rem .9rem;border:1px solid var(--line);border-radius:var(--radius-sm);
+  background:var(--paper);transition:border-color .15s ease, box-shadow .15s ease;
+}
+.nsri-reg input:focus,
+.nsri-reg select:focus,
+.nsri-reg textarea:focus{
+  border-color:var(--blue);box-shadow:0 0 0 3px rgba(31,95,209, 0.25);outline:none;
+}
+.nsri-reg input[aria-invalid="true"],
+.nsri-reg select[aria-invalid="true"],
+.nsri-reg textarea[aria-invalid="true"]{
+  border-color:var(--red);
+}
+.nsri-reg textarea{resize:vertical;min-height:88px;}
+.nsri-reg .hint{font-size:.82rem;color:var(--muted);margin-top:.45rem;}
+.nsri-reg .error{font-size:.82rem;color:var(--red);margin-top:.4rem;min-height:1em;}
+
+.nsri-reg .field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media (max-width:480px){.nsri-reg .field-row{grid-template-columns:1fr;}}
+
+.nsri-reg .radio,
+.nsri-reg .checkbox{
+  display:flex;align-items:flex-start;gap:.65rem;font-size:.93rem;font-weight:400;color:var(--ink);
+  padding:.6rem .2rem;border-radius:var(--radius-sm);cursor:pointer;margin-bottom:.2rem;
+}
+.nsri-reg .radio:hover,
+.nsri-reg .checkbox:hover{background:var(--paper-dim);}
+.nsri-reg .radio input,
+.nsri-reg .checkbox input{
+  margin:.18rem 0 0;flex-shrink:0;width:17px;height:17px;accent-color:var(--blue);cursor:pointer;
+}
+
+.nsri-reg #teammatesField{
+  border-left:3px solid var(--blue-soft);padding-left:1rem;margin-top:-.4rem;
+}
+
+.nsri-reg .payment-block{
+  background:var(--paper-dim);border-radius:var(--radius-md);padding:1.5rem 1.6rem;margin-top:.4rem;
+}
+.nsri-reg .payment-block h2{
+  font-family:var(--font-body);font-size:1rem;font-weight:700;margin:0 0 .6rem;color:var(--ink);
+}
+.nsri-reg .payment-summary{
+  font-family:var(--font-mono);font-size:.95rem;font-weight:600;color:var(--ink);
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:.7rem .9rem;margin-bottom:.6rem;
+}
+.nsri-reg .payment-block .btn{margin:.4rem 0 1rem;}
+.nsri-reg .payment-confirm{margin-bottom:0;}
+
+.nsri-reg .btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.85rem 1.4rem;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;
+  border:1px solid transparent;cursor:pointer;text-decoration:none;
+  transition:transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.nsri-reg .btn-primary{background:var(--blue);color:#fff;}
+.nsri-reg .btn-primary:hover{background:var(--blue-hover);box-shadow:0 6px 16px rgba(31,95,209,.24);}
+.nsri-reg .btn-primary:disabled{opacity:.55;cursor:not-allowed;box-shadow:none;transform:none;}
+.nsri-reg .btn-secondary{background:#fff;border-color:var(--line);color:var(--ink);}
+.nsri-reg .btn-secondary:hover{border-color:var(--blue);color:var(--blue-text);}
+.nsri-reg .btn-block{width:100%;}
+
+.nsri-reg .form-note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:1rem;}
+
+.nsri-reg .success{text-align:center;padding:1rem 0;}
+.nsri-reg .success .mark{
+  width:52px;height:52px;border-radius:50%;background:var(--blue-soft);color:var(--blue-text);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;
+}
+.nsri-reg .success h2{font-family:var(--font-display);font-size:1.5rem;margin:0 0 .6rem;}
+.nsri-reg .success p{color:var(--muted);font-size:.95rem;max-width:420px;margin:0 auto;}
+
+.nsri-reg .icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+
+@media (prefers-reduced-motion: reduce){
+  .nsri-reg *{transition:none !important;}
+}
+</style>
+</head>
+<body>
+
+<div class="nsri-reg">
+  <div class="nsri-reg__shell">
+    <div class="nsri-reg__card">
+
+      <div class="nsri-reg__head">
+        <p class="nsri-reg__eyebrow">Summer Research Hackathon 2026</p>
+        <h1>Register your team</h1>
+        <p class="nsri-reg__sub">Takes about five minutes. You'll confirm payment at the end.</p>
+      </div>
+
+      <form id="nsriForm" novalidate>
+
+        <!-- Q1 - Full name -->
+        <div class="field">
+          <label for="fullName">Full name<span class="req" aria-hidden="true">*</span></label>
+          <input id="fullName" name="fullName" type="text" autocomplete="name" required aria-describedby="err-fullName">
+          <p class="error" id="err-fullName" role="alert"></p>
+        </div>
+
+        <!-- Q2 - Email -->
+        <div class="field">
+          <label for="email">Email address<span class="req" aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="err-email">
+          <p class="error" id="err-email" role="alert"></p>
+        </div>
+
+        <!-- Q3 - Country & time zone -->
+        <fieldset class="field-group">
+          <legend>Country &amp; time zone<span class="req" aria-hidden="true">*</span></legend>
+          <div class="field-row">
+            <div class="field" style="margin-bottom:0;">
+              <label for="country">Country</label>
+              <input id="country" name="country" type="text" autocomplete="country-name" required aria-describedby="err-country">
+              <p class="error" id="err-country" role="alert"></p>
+            </div>
+            <div class="field" style="margin-bottom:0;">
+              <label for="timezone">Time zone</label>
+              <select id="timezone" name="timezone" required aria-describedby="err-timezone">
+                <option value="" disabled selected>Select…</option>
+                <option>UTC−12 to UTC−9 (Hawaii, Alaska)</option>
+                <option>UTC−8 to UTC−5 (US / Canada)</option>
+                <option>UTC−4 to UTC−1 (Brazil, mid-Atlantic)</option>
+                <option>UTC+0 to UTC+3 (UK, Europe, West Africa)</option>
+                <option>UTC+4 to UTC+7 (Middle East, South / Central Asia)</option>
+                <option>UTC+8 to UTC+11 (East Asia, Australia)</option>
+                <option>UTC+12 to UTC+14 (New Zealand, Pacific)</option>
+              </select>
+              <p class="error" id="err-timezone" role="alert"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Q4 - Grade level -->
+        <div class="field">
+          <label for="gradeLevel">Grade level / year<span class="req" aria-hidden="true">*</span></label>
+          <select id="gradeLevel" name="gradeLevel" required aria-describedby="err-gradeLevel">
+            <option value="" disabled selected>Select…</option>
+            <option>High school - 9th or 10th grade</option>
+            <option>High school - 11th or 12th grade</option>
+            <option>Undergraduate - 1st or 2nd year</option>
+            <option>Undergraduate - 3rd year or above</option>
+            <option>Graduate student</option>
+            <option>Other</option>
+          </select>
+          <p class="error" id="err-gradeLevel" role="alert"></p>
+        </div>
+
+        <!-- Q5 - Registering as -->
+        <fieldset class="field-group">
+          <legend>Are you registering as<span class="req" aria-hidden="true">*</span></legend>
+          <label class="radio"><input type="radio" name="regType" value="Individual (need a team)" required> Individual - I need a team</label>
+          <label class="radio"><input type="radio" name="regType" value="Individual (already have a team)"> Individual - I already have a team</label>
+          <label class="radio"><input type="radio" name="regType" value="Team representative"> Team representative - registering a full team</label>
+          <p class="error" id="err-regType" role="alert"></p>
+        </fieldset>
+
+        <!-- Q6 - Conditional teammates -->
+        <div class="field" id="teammatesField" hidden>
+          <label for="teammates">Teammates - name and email for each</label>
+          <textarea id="teammates" name="teammates" rows="4" placeholder="Jane Doe - jane@example.com
+Sam Lee - sam@example.com"></textarea>
+          <p class="hint">One teammate per line. You can update this later if your team changes.</p>
+        </div>
+
+        <!-- Q7 - Track -->
+        <fieldset class="field-group">
+          <legend>Which research track are you interested in?<span class="req" aria-hidden="true">*</span></legend>
+          <label class="radio"><input type="radio" name="track" value="Biotechnology (Insilico Lab)" required> Biotechnology - sponsored by The Insilico Lab</label>
+          <label class="radio"><input type="radio" name="track" value="Economics & Finance"> Economics &amp; Finance</label>
+          <label class="radio"><input type="radio" name="track" value="Technology & AI"> Technology &amp; AI</label>
+          <label class="radio"><input type="radio" name="track" value="Environmental Sciences"> Environmental Sciences</label>
+          <label class="radio"><input type="radio" name="track" value="Social Sciences / Humanities / Policy"> Social Sciences / Humanities / Policy</label>
+          <p class="error" id="err-track" role="alert"></p>
+        </fieldset>
+
+        <!-- Q8 - Referral -->
+        <fieldset class="field-group">
+          <legend>How did you hear about the hackathon?<span class="req" aria-hidden="true">*</span></legend>
+          <label class="radio"><input type="radio" name="referral" value="NSRI" required> NSRI</label>
+          <label class="radio"><input type="radio" name="referral" value="YRI"> YRI</label>
+          <label class="radio"><input type="radio" name="referral" value="The Insilico Lab"> The Insilico Lab</label>
+          <label class="radio"><input type="radio" name="referral" value="Other"> Other</label>
+          <p class="error" id="err-referral" role="alert"></p>
+        </fieldset>
+
+        <!-- Q9 - Rules confirmation -->
+        <div class="field">
+          <label class="checkbox">
+            <input type="checkbox" id="rulesConfirm" name="rulesConfirm" required aria-describedby="err-rulesConfirm">
+            I understand the rules, deadlines, and originality requirements for this hackathon.
+          </label>
+          <p class="error" id="err-rulesConfirm" role="alert"></p>
+        </div>
+
+        <!-- Q10 - Payment -->
+        <div class="field-group payment-block">
+          <h2>Payment</h2>
+          <p class="payment-summary" id="paymentSummary">Calculating your registration fee…</p>
+          <p class="hint" style="margin-top:0;margin-bottom:.9rem;">Payments are processed securely through Hack Club Bank.</p>
+          <a class="btn btn-secondary btn-block" id="paymentLink" href="#" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"></rect><line x1="3" y1="10.5" x2="21" y2="10.5"></line></svg>
+            Pay with Hack Club
+          </a>
+          <label class="checkbox payment-confirm">
+            <input type="checkbox" id="paymentConfirm" name="paymentConfirm" required aria-describedby="err-paymentConfirm">
+            I've completed my payment.
+          </label>
+          <p class="error" id="err-paymentConfirm" role="alert"></p>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Submit registration</button>
+        <p class="form-note">By submitting, you agree to be contacted about this event at the email address above.</p>
+      </form>
+
+      <div class="success" id="successPanel" hidden>
+        <div class="mark">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" style="width:24px;height:24px;"><path d="M5,13 L9.5,17.5 L19,7"></path></svg>
+        </div>
+        <h2>You're registered.</h2>
+        <p>We've sent a confirmation to <strong id="successEmail"></strong>. Watch your inbox for team-matching details and the opening ceremony link.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* =====================================================================
+     INTEGRATION POINTS - replace these two before going live:
+
+     1) HACKCLUB_PAYMENT_URL
+        Point this at your Hack Club Bank checkout / event payment link
+        (e.g. an HCB event page or invoice link). It currently points
+        nowhere ("#").
+
+     2) submitToBackend()
+        This currently only shows the success panel locally. Wire it to
+        wherever registrations should actually land - for example a
+        Formspree endpoint, a Google Apps Script tied to a Sheet, or
+        NSRI's own backend. An example fetch() call is included
+        (commented out) below.
+     ===================================================================== */
+  var HACKCLUB_PAYMENT_URL = "#"; // TODO: replace with your real Hack Club Bank link
+
+  var form = document.getElementById('nsriForm');
+  var teammatesField = document.getElementById('teammatesField');
+  var teammatesInput = document.getElementById('teammates');
+  var paymentLink = document.getElementById('paymentLink');
+  paymentLink.setAttribute('href', HACKCLUB_PAYMENT_URL);
+
+  // --- Conditional teammates field ---
+  var regRadios = form.querySelectorAll('input[name="regType"]');
+  function updateTeammatesVisibility(){
+    var val = form.querySelector('input[name="regType"]:checked');
+    var show = val && (val.value === 'Individual (already have a team)' || val.value === 'Team representative');
+    teammatesField.hidden = !show;
+  }
+  regRadios.forEach(function(r){ r.addEventListener('change', updateTeammatesVisibility); });
+
+  // --- Dynamic pricing summary ---
+  var paymentSummary = document.getElementById('paymentSummary');
+  function setPricing(){
+    var now = new Date();
+    var earlyBirdEnd = new Date('2026-06-30T23:59:59');
+    var regularStart = new Date('2026-07-01T00:00:00');
+    var regularEnd = new Date('2026-07-10T23:59:59');
+    var eventStart = new Date('2026-07-13T00:00:00');
+
+    if(now <= earlyBirdEnd){
+      paymentSummary.textContent = 'Your registration fee: $10 (Early Bird, through Jun 30, 2026)';
+    } else if(now >= regularStart && now <= regularEnd){
+      paymentSummary.textContent = 'Your registration fee: $15 (Regular registration)';
+    } else if(now > regularEnd && now < eventStart){
+      paymentSummary.textContent = 'Registration fee: $15 - please confirm late availability with NSRI';
+    } else if(now >= eventStart){
+      paymentSummary.textContent = 'The standard registration window has closed - contact NSRI to check availability';
+    } else {
+      paymentSummary.textContent = 'Registration fee: $10 (Early Bird, through Jun 30, 2026)';
+    }
+  }
+  setPricing();
+
+  // --- Validation helpers ---
+  function setError(id, message){
+    var el = document.getElementById('err-' + id);
+    if(el){ el.textContent = message || ''; }
+  }
+  function markInvalid(el, invalid){
+    if(!el) return;
+    if(invalid){ el.setAttribute('aria-invalid','true'); }
+    else{ el.removeAttribute('aria-invalid'); }
+  }
+
+  function validate(){
+    var firstInvalid = null;
+    var ok = true;
+
+    function fail(fieldEl, errId, message){
+      ok = false;
+      setError(errId, message);
+      markInvalid(fieldEl, true);
+      if(!firstInvalid) firstInvalid = fieldEl;
+    }
+    function pass(fieldEl, errId){
+      setError(errId, '');
+      markInvalid(fieldEl, false);
+    }
+
+    var fullName = document.getElementById('fullName');
+    if(!fullName.value.trim()){ fail(fullName, 'fullName', 'Enter your full name.'); } else { pass(fullName, 'fullName'); }
+
+    var email = document.getElementById('email');
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+    if(!emailOk){ fail(email, 'email', 'Enter a valid email address.'); } else { pass(email, 'email'); }
+
+    var country = document.getElementById('country');
+    if(!country.value.trim()){ fail(country, 'country', 'Enter your country.'); } else { pass(country, 'country'); }
+
+    var timezone = document.getElementById('timezone');
+    if(!timezone.value){ fail(timezone, 'timezone', 'Select your time zone.'); } else { pass(timezone, 'timezone'); }
+
+    var gradeLevel = document.getElementById('gradeLevel');
+    if(!gradeLevel.value){ fail(gradeLevel, 'gradeLevel', 'Select your grade level or year.'); } else { pass(gradeLevel, 'gradeLevel'); }
+
+    var regType = form.querySelector('input[name="regType"]:checked');
+    if(!regType){ ok = false; setError('regType', 'Choose how you are registering.'); if(!firstInvalid) firstInvalid = form.querySelector('input[name="regType"]'); }
+    else{ setError('regType',''); }
+
+    var track = form.querySelector('input[name="track"]:checked');
+    if(!track){ ok = false; setError('track', 'Choose a research track.'); if(!firstInvalid) firstInvalid = form.querySelector('input[name="track"]'); }
+    else{ setError('track',''); }
+
+    var referral = form.querySelector('input[name="referral"]:checked');
+    if(!referral){ ok = false; setError('referral', 'Let us know how you heard about us.'); if(!firstInvalid) firstInvalid = form.querySelector('input[name="referral"]'); }
+    else{ setError('referral',''); }
+
+    var rulesConfirm = document.getElementById('rulesConfirm');
+    if(!rulesConfirm.checked){ ok = false; setError('rulesConfirm', 'Please confirm before submitting.'); if(!firstInvalid) firstInvalid = rulesConfirm; }
+    else{ setError('rulesConfirm',''); }
+
+    var paymentConfirm = document.getElementById('paymentConfirm');
+    if(!paymentConfirm.checked){ ok = false; setError('paymentConfirm', 'Please confirm your payment before submitting.'); if(!firstInvalid) firstInvalid = paymentConfirm; }
+    else{ setError('paymentConfirm',''); }
+
+    if(firstInvalid && firstInvalid.focus){ firstInvalid.focus(); }
+    return ok;
+  }
+
+  function collectData(){
+    var fd = new FormData(form);
+    var data = {};
+    fd.forEach(function(value, key){ data[key] = value; });
+    return data;
+  }
+
+  function submitToBackend(data){
+    // Example real-backend wiring (uncomment and edit):
+    //
+    // return fetch('https://your-endpoint.example.com/register', {
+    //   method: 'POST',
+    //   headers: {'Content-Type':'application/json'},
+    //   body: JSON.stringify(data)
+    // });
+    //
+    // For now, resolve locally so the form is fully demoable without a backend:
+    return Promise.resolve(data);
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!validate()) return;
+
+    var submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    var data = collectData();
+    submitToBackend(data).then(function(){
+      form.hidden = true;
+      var successPanel = document.getElementById('successPanel');
+      document.getElementById('successEmail').textContent = data.email;
+      successPanel.hidden = false;
+      successPanel.setAttribute('tabindex','-1');
+      successPanel.focus();
+    }).catch(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit registration';
+      alert('Something went wrong submitting your registration. Please try again.');
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
