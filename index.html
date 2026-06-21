@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Summer Research Hackathon 2026 - NSRI</title>
-<meta name="description" content="A five-day virtual research sprint for high school and undergraduate students worldwide. July 13–18, 2026. $2,000 prize pool. Hosted by the National Student Research Institute.">
+<meta name="description" content="A 5 day virtual research sprint for high school and undergraduate students worldwide. July 13 to 18, 2026. Baseline $1,000 prize pool. Hosted by NSRI in collaboration with The Insilico Lab and YRI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -234,7 +234,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
   background:radial-gradient(120% 140% at 80% -10%, var(--navy-soft) 0%, var(--navy-deep) 60%);
   color:#fff;
   overflow:hidden;
-  padding:clamp(4.5rem,10vw,7.5rem) 0 clamp(3.5rem,8vw,6rem);
+  padding:clamp(2.6rem,6vw,4.6rem) 0 clamp(3.5rem,8vw,6rem);
 }
 .hero-graph{
   position:absolute;top:-40px;right:-60px;width:560px;height:560px;
@@ -248,7 +248,11 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
   mask-image:linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 75%);
   pointer-events:none;
 }
-.hero-inner{position:relative;z-index:2;max-width:760px;}
+.hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+}
 .hero h1{
   color:#fff;
   font-size:clamp(2.5rem,5.4vw,4rem);
@@ -261,7 +265,32 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
   font-size:1.15rem;
   color:#D7E2F2;
   max-width:620px;
+  margin-bottom:1.4rem;
+}
+.collab-strip{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:.75rem;
   margin-bottom:2.1rem;
+}
+.collab-strip .label{
+  font-family:var(--font-mono);
+  font-size:.68rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#8FA3C2;
+}
+.collab-badge{
+  display:inline-flex;
+  align-items:center;
+  border:1px solid var(--line-dark);
+  border-radius:var(--radius-sm);
+  padding:.48rem .72rem;
+  background:rgba(255,255,255,.07);
+  color:#fff;
+  font-weight:600;
+  font-size:.9rem;
 }
 .hero-cta{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:2.6rem;}
 
@@ -276,6 +305,42 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
   color:#8FA3C2;margin-bottom:.4rem;
 }
 .meta-item .value{font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:#fff;}
+
+/* ============================================================
+   IMAGE HEADER
+   ============================================================ */
+.image-header{
+  height:clamp(150px, 11vw, 190px);
+  overflow:hidden;
+  background:transparent;
+  border:0;
+}
+.image-header-track{
+  height:100%;
+  display:flex;
+  width:max-content;
+  animation:image-header-scroll 34s linear infinite;
+}
+.image-header-frame{
+  height:100%;
+  width:clamp(360px, 38vw, 620px);
+  flex:0 0 auto;
+  overflow:hidden;
+}
+.image-header-frame img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 50%;
+}
+@keyframes image-header-scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+@media (prefers-reduced-motion: reduce){
+  .image-header-track{animation:none;}
+}
 
 /* ============================================================
    OVERVIEW
@@ -301,6 +366,64 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
 
 @media (max-width:760px){
   .overview-grid{grid-template-columns:1fr;gap:2.5rem;}
+}
+
+/* ============================================================
+   COLLABORATORS
+   ============================================================ */
+.collaborators-band{
+  padding:clamp(2.8rem,6vw,4rem) 0;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.collaborators-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:2rem;
+  margin-bottom:1.4rem;
+}
+.collaborators-head h2{
+  font-family:var(--font-body);
+  font-size:1.35rem;
+  font-weight:700;
+}
+.collaborators-head p{
+  max-width:520px;
+  color:var(--muted);
+  font-size:.96rem;
+}
+.collaborators-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:1rem;
+}
+.collaborator-card{
+  border:1px solid var(--line);
+  border-radius:var(--radius-md);
+  padding:1.35rem;
+  background:var(--paper);
+}
+.collaborator-card .role{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:.68rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--blue-text);
+  margin-bottom:.45rem;
+}
+.collaborator-card h3{
+  font-family:var(--font-body);
+  font-size:1.05rem;
+  font-weight:700;
+  margin-bottom:.45rem;
+}
+.collaborator-card p{color:var(--muted);font-size:.93rem;}
+@media (max-width:760px){
+  .collaborators-head{display:block;}
+  .collaborators-head p{margin-top:.7rem;}
+  .collaborators-grid{grid-template-columns:1fr;}
 }
 
 /* ============================================================
@@ -600,16 +723,15 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
     <nav class="site-nav" aria-label="Primary">
       <ul>
         <li><a href="#overview">Overview</a></li>
-        <li><a href="#tracks">Tracks</a></li>
+        <li><a href="#tracks">Categories</a></li>
         <li><a href="#judging">Judging</a></li>
         <li><a href="#prizes">Prizes</a></li>
-        <li><a href="#register">Register</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header">Register</a></li>
         <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#partners">Partner</a></li>
         <li><a href="#about">About</a></li>
       </ul>
     </nav>
-    <a class="btn btn-primary btn-sm header-cta" href="registration-form.html">Register now</a>
+    <a class="btn btn-primary btn-sm header-cta" href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header">Register now</a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">
       <svg class="icon" aria-hidden="true"><use href="#icon-menu" id="toggleIconUse"/></svg>
     </button>
@@ -617,17 +739,27 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
   <div class="mobile-panel" id="mobilePanel">
     <div class="mobile-panel-inner">
       <a href="#overview">Overview</a>
-      <a href="#tracks">Tracks</a>
+      <a href="#tracks">Categories</a>
       <a href="#judging">Judging</a>
       <a href="#prizes">Prizes</a>
-      <a href="#register">Register</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header">Register</a>
       <a href="#timeline">Timeline</a>
-      <a href="#partners">Partner</a>
       <a href="#about">About</a>
-      <a class="btn btn-primary btn-block" href="registration-form.html">Register now</a>
+      <a class="btn btn-primary btn-block" href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header">Register now</a>
     </div>
   </div>
 </header>
+
+<div class="image-header" aria-label="Summer Research Hackathon 2026 banner">
+  <div class="image-header-track" aria-hidden="true">
+    <div class="image-header-frame"><img src="assets/summer_research_hackathon_2026_clear.png" alt=""></div>
+    <div class="image-header-frame"><img src="assets/summer_research_hackathon_2026_clear.png" alt=""></div>
+    <div class="image-header-frame"><img src="assets/summer_research_hackathon_2026_clear.png" alt=""></div>
+    <div class="image-header-frame"><img src="assets/summer_research_hackathon_2026_clear.png" alt=""></div>
+    <div class="image-header-frame"><img src="assets/summer_research_hackathon_2026_clear.png" alt=""></div>
+    <div class="image-header-frame"><img src="assets/summer_research_hackathon_2026_clear.png" alt=""></div>
+  </div>
+</div>
 
 <main id="main">
 
@@ -638,16 +770,44 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
     <div class="container hero-inner">
       <p class="eyebrow on-dark">National Student Research Institute</p>
       <h1><span>A five-day sprint from</span> <span>question&nbsp;to&nbsp;<em>research&nbsp;paper.</em></span></h1>
-      <p class="abstract">NSRI's last research hackathon drew more than 900 student participants. This July, we're back for five days - turning a research question into a real paper, reviewed by PhD researchers and industry experts. No prior research experience required.</p>
+      <p class="abstract">This 5 day virtual research sprint, hosted by NSRI in collaboration with The Insilico Lab and YRI, will take place from July 13 to 18, 2026.</p>
+      <div class="collab-strip" aria-label="Event collaborators">
+        <span class="label">In collaboration with</span>
+        <span class="collab-badge">The Insilico Lab</span>
+        <span class="collab-badge">YRI</span>
+      </div>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="registration-form.html">Register now <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
-        <a class="btn btn-outline-invert" href="#partners">Partner with us</a>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header">Register now <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
       </div>
       <div class="meta-strip">
         <div class="meta-item"><div class="label">Duration</div><div class="value">5 Days</div></div>
         <div class="meta-item"><div class="label">Format</div><div class="value">Fully Virtual</div></div>
-        <div class="meta-item"><div class="label">Target Audience</div><div class="value">1,000+ Students</div></div>
-        <div class="meta-item"><div class="label">Prize Pool</div><div class="value">$2,000</div></div>
+        <div class="meta-item"><div class="label">Prize Pool</div><div class="value">$1,000+</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ COLLABORATORS ============================================================ -->
+  <section class="collaborators-band" aria-labelledby="collaborators-title">
+    <div class="container">
+      <div class="collaborators-head reveal">
+        <div>
+          <p class="eyebrow">Collaborators</p>
+          <h2 id="collaborators-title">Built with research communities</h2>
+        </div>
+        <p>NSRI is hosting this sprint in collaboration with partners helping students access mentorship, tools, and research pathways.</p>
+      </div>
+      <div class="collaborators-grid">
+        <div class="collaborator-card reveal">
+          <span class="role">Research collaborator</span>
+          <h3>The Insilico Lab</h3>
+          <p>Supporting student research at the intersection of life sciences, computing, and scientific discovery.</p>
+        </div>
+        <div class="collaborator-card reveal">
+          <span class="role">Community collaborator</span>
+          <h3>YRI</h3>
+          <p>Helping connect young researchers with opportunities to learn, collaborate, and publish stronger work.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -664,7 +824,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
         <div class="overview-col reveal">
           <h3><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg> Format &amp; schedule</h3>
           <ul class="fact-list">
-            <li><span class="k">Dates</span><span class="v">July 13–18, 2026 (5 days)</span></li>
+            <li><span class="k">Dates</span><span class="v">July 13 to 18, 2026 (5 days)</span></li>
             <li><span class="k">Format</span><span class="v">Fully virtual - all participation is remote</span></li>
             <li><span class="k">Time zone</span><span class="v">All deadlines anchored to Eastern Standard Time (EST)</span></li>
             <li><span class="k">Submission deadline</span><span class="v">July 18, 11:59 PM EST</span></li>
@@ -680,47 +840,46 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
     </div>
   </section>
 
-  <!-- ============================================================ TRACKS ============================================================ -->
+  <!-- ============================================================ CATEGORIES ============================================================ -->
   <section id="tracks" style="background:var(--paper-dim);">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">Research Tracks</p>
-        <h2>Five fields, one challenge format</h2>
-        <p class="lede">Pick the track closest to your curiosity. Every track welcomes interdisciplinary approaches and innovative angles.</p>
+        <p class="eyebrow">Research Categories</p>
+        <h2>Six categories, one challenge format</h2>
+        <p class="lede">Pick the category closest to your curiosity. Every category welcomes interdisciplinary approaches and innovative angles.</p>
       </div>
       <div class="tracks-grid">
         <div class="track-card reveal">
           <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-flask"/></svg></div>
-          <h4>Biotechnology</h4>
-          <p>Genomics, bioinformatics, drug discovery, molecular biology.</p>
-          <span class="track-tag sponsored"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Sponsored by The Insilico Lab</span>
+          <h4>Health and Life Sciences</h4>
+          <p>Biology, medicine, public health, neuroscience, biotechnology, and clinical research.</p>
         </div>
         <div class="track-card reveal">
           <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-chart"/></svg></div>
-          <h4>Economics &amp; Finance</h4>
-          <p>Behavioral economics, market analysis, policy evaluation.</p>
-          <span class="track-tag open">Open for sponsorship</span>
+          <h4>AI, Data Science, and Computing</h4>
+          <p>Machine learning, data analysis, software systems, computational modeling, and human-computer interaction.</p>
         </div>
         <div class="track-card reveal">
           <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-cpu"/></svg></div>
-          <h4>Technology &amp; AI</h4>
-          <p>Machine learning, NLP, computer vision, software systems.</p>
-          <span class="track-tag open">Open for sponsorship</span>
+          <h4>Engineering and Technology</h4>
+          <p>Robotics, devices, materials engineering, systems design, and applied innovation.</p>
+        </div>
+        <div class="track-card reveal">
+          <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-flask"/></svg></div>
+          <h4>Physical and Chemical Sciences</h4>
+          <p>Chemistry, physics, astronomy, materials science, and laboratory or theoretical research.</p>
         </div>
         <div class="track-card reveal">
           <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg></div>
-          <h4>Environmental Sciences</h4>
-          <p>Climate modeling, sustainability, conservation science.</p>
-          <span class="track-tag open">Open for sponsorship</span>
+          <h4>Environmental and Earth Sciences</h4>
+          <p>Climate, sustainability, ecology, geology, conservation, and planetary systems.</p>
         </div>
         <div class="track-card reveal">
           <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-scale"/></svg></div>
-          <h4>Social Sciences / Humanities / Policy</h4>
-          <p>Sociology, education, international relations, ethics.</p>
-          <span class="track-tag open">Open for sponsorship</span>
+          <h4>Social Sciences, Humanities, and Policy</h4>
+          <p>Sociology, education, economics, history, ethics, governance, and international relations.</p>
         </div>
       </div>
-      <p class="tracks-footnote reveal">Sponsoring a track adds naming rights, a branded challenge prompt, and direct engagement with that track's participants. <a href="#partners">Become a track partner →</a></p>
     </div>
   </section>
 
@@ -770,33 +929,23 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
     <div class="container">
       <div class="section-head reveal">
         <p class="eyebrow gold">Prizes &amp; Recognition</p>
-        <h2>$2,000 across the top five teams</h2>
-        <p class="lede">Prizes split evenly among teammates unless a written alternative is provided before awards.</p>
+        <h2>Baseline prize pool: $1,000</h2>
+        <p class="lede">The prize pool may increase depending on total participant registration.</p>
       </div>
       <div class="prize-rows">
         <div class="prize-row reveal">
           <span class="prize-rank">1st</span>
-          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="100"></span></div><span class="prize-recognition">Featured on NSRI's website and social channels</span></div>
-          <span class="prize-amount">$1,000</span>
+          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="100"></span></div><span class="prize-recognition">Current Prize Structure</span></div>
+          <span class="prize-amount">$600</span>
         </div>
         <div class="prize-row reveal">
           <span class="prize-rank">2nd</span>
-          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="50"></span></div><span class="prize-recognition">Featured on NSRI's website</span></div>
-          <span class="prize-amount">$500</span>
+          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="50"></span></div><span class="prize-recognition">Current Prize Structure</span></div>
+          <span class="prize-amount">$300</span>
         </div>
         <div class="prize-row reveal">
           <span class="prize-rank">3rd</span>
-          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="25"></span></div><span class="prize-recognition">Certificate of Excellence</span></div>
-          <span class="prize-amount">$250</span>
-        </div>
-        <div class="prize-row reveal">
-          <span class="prize-rank">4th</span>
-          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="15"></span></div><span class="prize-recognition">Certificate of Merit</span></div>
-          <span class="prize-amount">$150</span>
-        </div>
-        <div class="prize-row reveal">
-          <span class="prize-rank">5th</span>
-          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="10"></span></div><span class="prize-recognition">Certificate of Merit</span></div>
+          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="17"></span></div><span class="prize-recognition">Current Prize Structure</span></div>
           <span class="prize-amount">$100</span>
         </div>
       </div>
@@ -830,7 +979,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
         </div>
       </div>
       <div class="register-foot reveal">
-        <a class="btn btn-primary" href="registration-form.html">Start your registration <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header">Start your registration <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
         <p>NSRI is a registered 501(c)(3) nonprofit. Fees fund event operations, prizes, and platform costs.</p>
       </div>
     </div>
@@ -845,7 +994,6 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
       </div>
       <div class="tl">
         <div class="tl-item reveal"><div class="tl-date">Jun 18 – 30</div><h4>Early Bird registration</h4><p>$10 individual rate.</p></div>
-        <div class="tl-item reveal"><div class="tl-date">Jun 25</div><h4>Partner commitment deadline</h4><p>For maximum co-promotion ahead of launch.</p></div>
         <div class="tl-item reveal"><div class="tl-date">Jul 1 – 10</div><h4>Regular registration</h4><p>$15 individual rate.</p></div>
         <div class="tl-item is-anchor reveal"><div class="tl-date">Jul 13</div><h4>Hackathon begins</h4><p>Opening ceremony and track assignments.</p></div>
         <div class="tl-item is-anchor reveal"><div class="tl-date">Jul 18</div><h4>Submissions due</h4><p>11:59 PM EST.</p></div>
@@ -886,68 +1034,6 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
           <p>A dedicated inbox stays open for the full event for technical issues, rule questions, and anything else that comes up.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============================================================ PARTNERS ============================================================ -->
-  <section id="partners" class="partners-section">
-    <svg class="hero-graph" viewBox="0 0 32 32" aria-hidden="true" style="top:auto;bottom:-80px;left:-80px;right:auto;"><use href="#icon-graph-mark"/></svg>
-    <div class="container" style="position:relative;z-index:2;">
-      <div class="section-head reveal">
-        <p class="eyebrow on-dark">Partnership</p>
-        <h2>Reach 1,000+ student researchers</h2>
-        <p class="lede">Partnership with NSRI can mean brand visibility, direct engagement with student researchers, community reach, or a direct share of registration revenue. Terms are built around what your organization is trying to accomplish.</p>
-      </div>
-
-      <div class="partner-model reveal">
-        <p><svg class="icon icon-sm" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:.5rem;"><use href="#icon-share"/></svg><strong>Revenue sharing model.</strong> Every partner receives a unique referral code. At the close of registration, total revenue is split proportionally by the registrations each code brought in - minus event costs: prizes, platform fees, and payment processing.</p>
-      </div>
-
-      <div class="tiers-grid">
-        <div class="tier-card reveal">
-          <span class="tier-label">Contribution: Revenue share</span>
-          <h4>Community Partner</h4>
-          <ul>
-            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Unique referral code</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Proportional revenue share of attributed registrations</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Logo on website and event materials</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Co-branded social media assets</li>
-          </ul>
-        </div>
-        <div class="tier-card reveal">
-          <span class="tier-label">Contribution: Tools / credits</span>
-          <h4>In-Kind Partner</h4>
-          <ul>
-            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Brand exposure to every participant</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Product integration in the event toolkit</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Featured in welcome communications</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="reach-grid">
-        <div class="reach-col reveal">
-          <h4>NSRI channels</h4>
-          <div class="reach-stat"><span class="k">Community</span><span class="v">16,000+ student researchers</span></div>
-          <div class="reach-stat"><span class="k">LinkedIn</span><span class="v">500,000+ impressions on past posts</span></div>
-          <div class="reach-stat"><span class="k">Newsletter</span><span class="v">Active community engagement</span></div>
-          <div class="reach-stat"><span class="k">Website</span><span class="v">nsri.world</span></div>
-        </div>
-        <div class="reach-col reveal">
-          <h4>Partner channels</h4>
-          <div class="reach-stat"><span class="k">Zenith Prep Academy</span><span class="v">Network reach</span></div>
-          <div class="reach-stat"><span class="k">RSF</span><span class="v">Network reach</span></div>
-          <div class="reach-stat"><span class="k">YRI Fellowship</span><span class="v">Network reach</span></div>
-          <div class="reach-stat"><span class="k">Combined</span><span class="v">50,000+ students &amp; families</span></div>
-        </div>
-      </div>
-
-      <div class="projection-box reveal">
-        <span class="tag">Early estimate, not a guarantee</span>
-        <p>Based on combined partner reach and the reduced price point, NSRI projects <strong>1,000+ registrations</strong>, with an estimated <strong>400–600 paid conversions</strong> - roughly <strong>$6,000–$9,000</strong> in gross registration revenue.</p>
-      </div>
-
-      <a class="btn btn-outline-invert reveal" href="mailto:nsrinstitution@gmail.com?subject=Partnership%20Inquiry%20-%20Summer%20Research%20Hackathon%202026">Start a partnership conversation <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
     </div>
   </section>
 
@@ -996,15 +1082,14 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
         <h5>Event</h5>
         <ul>
           <li><a href="#overview">Overview</a></li>
-          <li><a href="#tracks">Tracks</a></li>
+          <li><a href="#tracks">Categories</a></li>
           <li><a href="#timeline">Timeline</a></li>
-          <li><a href="registration-form.html">Register</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header">Register</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Partner &amp; contact</h5>
+        <h5>Contact</h5>
         <ul>
-          <li><a href="#partners">Partnership tiers</a></li>
           <li><a href="mailto:nsrinstitution@gmail.com">nsrinstitution@gmail.com</a></li>
           <li><a href="https://nsri.world">nsri.world</a></li>
         </ul>
@@ -1012,7 +1097,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
     </div>
     <div class="footer-bottom">
       <span>© 2026 National Student Research Institute. A registered 501(c)(3) nonprofit.</span>
-      <span>Summer Research Hackathon - July 13–18, 2026</span>
+      <span>Summer Research Hackathon - July 13 to 18, 2026</span>
     </div>
   </div>
 </footer>

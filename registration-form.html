@@ -244,14 +244,15 @@ Sam Lee - sam@example.com"></textarea>
           <p class="hint">One teammate per line. You can update this later if your team changes.</p>
         </div>
 
-        <!-- Q7 - Track -->
+        <!-- Q7 - Category -->
         <fieldset class="field-group">
-          <legend>Which research track are you interested in?<span class="req" aria-hidden="true">*</span></legend>
-          <label class="radio"><input type="radio" name="track" value="Biotechnology (Insilico Lab)" required> Biotechnology - sponsored by The Insilico Lab</label>
-          <label class="radio"><input type="radio" name="track" value="Economics & Finance"> Economics &amp; Finance</label>
-          <label class="radio"><input type="radio" name="track" value="Technology & AI"> Technology &amp; AI</label>
-          <label class="radio"><input type="radio" name="track" value="Environmental Sciences"> Environmental Sciences</label>
-          <label class="radio"><input type="radio" name="track" value="Social Sciences / Humanities / Policy"> Social Sciences / Humanities / Policy</label>
+          <legend>Which research category are you interested in?<span class="req" aria-hidden="true">*</span></legend>
+          <label class="radio"><input type="radio" name="track" value="Health and Life Sciences" required> Health and Life Sciences</label>
+          <label class="radio"><input type="radio" name="track" value="AI, Data Science, and Computing"> AI, Data Science, and Computing</label>
+          <label class="radio"><input type="radio" name="track" value="Engineering and Technology"> Engineering and Technology</label>
+          <label class="radio"><input type="radio" name="track" value="Physical and Chemical Sciences"> Physical and Chemical Sciences</label>
+          <label class="radio"><input type="radio" name="track" value="Environmental and Earth Sciences"> Environmental and Earth Sciences</label>
+          <label class="radio"><input type="radio" name="track" value="Social Sciences, Humanities, and Policy"> Social Sciences, Humanities, and Policy</label>
           <p class="error" id="err-track" role="alert"></p>
         </fieldset>
 
@@ -413,7 +414,7 @@ Sam Lee - sam@example.com"></textarea>
     else{ setError('regType',''); }
 
     var track = form.querySelector('input[name="track"]:checked');
-    if(!track){ ok = false; setError('track', 'Choose a research track.'); if(!firstInvalid) firstInvalid = form.querySelector('input[name="track"]'); }
+    if(!track){ ok = false; setError('track', 'Choose a research category.'); if(!firstInvalid) firstInvalid = form.querySelector('input[name="track"]'); }
     else{ setError('track',''); }
 
     var referral = form.querySelector('input[name="referral"]:checked');
