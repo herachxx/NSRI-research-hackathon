@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Summer Research Hackathon 2026 - NSRI</title>
-<meta name="description" content="A 5 day virtual research sprint for high school and undergraduate students worldwide. July 13 to 18, 2026. Baseline $1,000 prize pool. Hosted by NSRI in collaboration with The Insilico Lab and YRI.">
+<meta name="description" content="A 5 day virtual research sprint for high school and undergraduate students worldwide. July 13 to 18, 2026. Baseline $1,000 prize pool. Hosted by NSRI with research collaborators, track partners, and confirmed judges.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -211,7 +211,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
 
 .mobile-panel{display:none;}
 
-@media (max-width:880px){
+@media (max-width:980px){
   .site-nav{display:none;}
   .nav-toggle{display:inline-flex;}
   .header-cta{display:none;}
@@ -395,56 +395,89 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
 }
 .collaborators-grid{
   display:grid;
-  grid-template-columns:repeat(2, minmax(0,1fr));
-  gap:1rem;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:0 2rem;
+  border-top:1px solid var(--line);
 }
 .collaborator-card{
-  border:1px solid var(--line);
-  border-radius:var(--radius-md);
-  padding:1.35rem;
-  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  padding:1.15rem 0 1.25rem;
+  background:transparent;
+  min-height:0;
 }
 .collaborator-card .role{
   display:block;
   font-family:var(--font-mono);
-  font-size:.68rem;
-  letter-spacing:.1em;
+  font-size:.66rem;
+  letter-spacing:.08em;
   text-transform:uppercase;
   color:var(--blue-text);
   margin-bottom:.45rem;
 }
 .collaborator-card h3{
   font-family:var(--font-body);
-  font-size:1.05rem;
+  font-size:1rem;
   font-weight:700;
   margin-bottom:.45rem;
 }
-.collaborator-card p{color:var(--muted);font-size:.93rem;}
+.collaborator-card h3 a{
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+}
+.collaborator-card h3 a:hover{color:var(--blue-text);border-bottom-color:currentColor;}
+.collaborator-card p{color:var(--muted);font-size:.9rem;line-height:1.55;}
+@media (max-width:1080px){.collaborators-grid{grid-template-columns:repeat(3, minmax(0,1fr));}}
 @media (max-width:760px){
   .collaborators-head{display:block;}
   .collaborators-head p{margin-top:.7rem;}
-  .collaborators-grid{grid-template-columns:1fr;}
+  .collaborators-grid{grid-template-columns:repeat(2, minmax(0,1fr));}
 }
+@media (max-width:540px){.collaborators-grid{grid-template-columns:1fr;}}
 
 /* ============================================================
    TRACKS
    ============================================================ */
 .tracks-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;
+  display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:0 3rem;
+  border-top:1px solid var(--line);
 }
 .track-card{
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
-  padding:1.8rem;display:flex;flex-direction:column;gap:.9rem;
-  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;
+  padding:1.35rem 0;display:grid;grid-template-columns:38px 1fr;gap:.35rem 1rem;
+  transition:none;
 }
-.track-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:#D7DEE8;}
+.track-card:hover{transform:none;box-shadow:none;border-color:var(--line);}
 .track-card .icon-wrap{
-  width:42px;height:42px;border-radius:var(--radius-sm);
-  background:var(--blue-soft);color:var(--blue-text);
+  width:34px;height:34px;border-radius:var(--radius-sm);
+  background:#fff;border:1px solid var(--line);color:var(--blue-text);
   display:flex;align-items:center;justify-content:center;
+  grid-row:1 / span 3;
 }
-.track-card h4{font-family:var(--font-body);font-size:1.05rem;font-weight:600;}
-.track-card p{color:var(--muted);font-size:.92rem;line-height:1.55;}
+.track-card .icon-wrap .icon{width:19px;height:19px;}
+.track-card h4{font-family:var(--font-body);font-size:1rem;font-weight:700;}
+.track-card p{color:var(--muted);font-size:.9rem;line-height:1.55;}
+.track-partner{
+  display:flex;
+  align-items:flex-start;
+  gap:.45rem;
+  margin-top:.05rem;
+  padding-top:0;
+  color:var(--muted);
+  font-family:var(--font-body);
+  font-size:.84rem;
+  letter-spacing:0;
+  line-height:1.55;
+  text-transform:none;
+}
+.track-partner .icon{width:14px;height:14px;margin-top:.23rem;color:var(--blue-text);opacity:.72;}
+.track-partner a{
+  color:var(--blue-text);
+  font-weight:600;
+  text-decoration:none;
+  border-bottom:1px solid rgba(22,71,168,.28);
+}
+.track-partner a:hover{border-bottom-color:currentColor;}
 .track-tag{
   font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;
   padding:.35rem .65rem;border-radius:999px;display:inline-flex;align-items:center;gap:.4rem;width:fit-content;
@@ -455,8 +488,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
 .tracks-footnote{margin-top:2rem;color:var(--muted);font-size:.95rem;}
 .tracks-footnote a{color:var(--blue-text);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;}
 
-@media (max-width:960px){.tracks-grid{grid-template-columns:repeat(2,1fr);}}
-@media (max-width:620px){.tracks-grid{grid-template-columns:1fr;}}
+@media (max-width:760px){.tracks-grid{grid-template-columns:1fr;}}
 
 /* ============================================================
    JUDGING
@@ -490,10 +522,66 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
 .integrity-note p{font-size:.93rem;color:var(--muted);}
 .integrity-note strong{color:var(--ink);}
 
+.judges-wrap{margin-top:3.2rem;padding-top:2.4rem;border-top:1px solid var(--line);}
+.judges-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:2rem;
+  margin-bottom:1.2rem;
+}
+.judges-head h3{font-size:1.2rem;}
+.judges-head p:not(.eyebrow){max-width:520px;color:var(--muted);font-size:.92rem;line-height:1.6;}
+.judges-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:0 3rem;
+}
+.judge-card{
+  background:transparent;
+  border:0;
+  border-top:1px solid var(--line);
+  border-radius:0;
+  padding:1.05rem 0 1.1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+}
+.judge-card-head{display:flex;align-items:center;gap:.55rem;margin-bottom:.05rem;}
+.judge-icon{
+  width:26px;
+  height:26px;
+  border-radius:var(--radius-sm);
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--blue-text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.judge-icon .icon{width:15px;height:15px;}
+.judge-role{
+  font-family:var(--font-body);
+  font-size:.82rem;
+  letter-spacing:0;
+  line-height:1.45;
+  text-transform:none;
+  color:var(--muted);
+}
+.judge-card h4{font-family:var(--font-body);font-size:1rem;font-weight:700;}
+.judge-card p{color:var(--muted);font-size:.89rem;line-height:1.55;}
+
 @media (max-width:700px){
   .phase{grid-template-columns:1fr;gap:.4rem;}
   .criteria-row{grid-template-columns:1fr;gap:.4rem;}
   .criteria-row .pts{text-align:left;}
+}
+@media (max-width:960px){.judges-grid{gap:0 2rem;}}
+@media (max-width:700px){
+  .judges-head{display:block;}
+  .judges-head p:not(.eyebrow){margin-top:.7rem;}
+  .judges-grid{grid-template-columns:1fr;}
 }
 
 /* ============================================================
@@ -724,6 +812,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
       <ul>
         <li><a href="#overview">Overview</a></li>
         <li><a href="#tracks">Categories</a></li>
+        <li><a href="#partners">Partners</a></li>
         <li><a href="#judging">Judging</a></li>
         <li><a href="#prizes">Prizes</a></li>
         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header">Register</a></li>
@@ -740,6 +829,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
     <div class="mobile-panel-inner">
       <a href="#overview">Overview</a>
       <a href="#tracks">Categories</a>
+      <a href="#partners">Partners</a>
       <a href="#judging">Judging</a>
       <a href="#prizes">Prizes</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header">Register</a>
@@ -770,11 +860,11 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
     <div class="container hero-inner">
       <p class="eyebrow on-dark">National Student Research Institute</p>
       <h1><span>A five-day sprint from</span> <span>question&nbsp;to&nbsp;<em>research&nbsp;paper.</em></span></h1>
-      <p class="abstract">This 5 day virtual research sprint, hosted by NSRI in collaboration with The Insilico Lab and YRI, will take place from July 13 to 18, 2026.</p>
+      <p class="abstract">This 5 day virtual research sprint, hosted by NSRI with research collaborators, track partners, and confirmed judges, will take place from July 13 to 18, 2026.</p>
       <div class="collab-strip" aria-label="Event collaborators">
         <span class="label">In collaboration with</span>
         <span class="collab-badge">The Insilico Lab</span>
-        <span class="collab-badge">YRI</span>
+        <span class="collab-badge">YRI Fellowship</span>
       </div>
       <div class="hero-cta">
         <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header">Register now <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
@@ -788,25 +878,56 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
   </section>
 
   <!-- ============================================================ COLLABORATORS ============================================================ -->
-  <section class="collaborators-band" aria-labelledby="collaborators-title">
+  <section class="collaborators-band" id="partners" aria-labelledby="partners-title">
     <div class="container">
       <div class="collaborators-head reveal">
         <div>
-          <p class="eyebrow">Collaborators</p>
-          <h2 id="collaborators-title">Built with research communities</h2>
+          <p class="eyebrow">Partners</p>
+          <h2 id="partners-title">Track partners and research communities</h2>
         </div>
-        <p>NSRI is hosting this sprint in collaboration with partners helping students access mentorship, tools, and research pathways.</p>
+        <p>NSRI is hosting this sprint with organizations and student-led research communities supporting mentorship, track expertise, and participant pathways.</p>
       </div>
       <div class="collaborators-grid">
         <div class="collaborator-card reveal">
           <span class="role">Research collaborator</span>
-          <h3>The Insilico Lab</h3>
-          <p>Supporting student research at the intersection of life sciences, computing, and scientific discovery.</p>
+          <h3><a href="https://www.linkedin.com/company/the-insilico-lab/"></a>The Insilico Lab</h3>
+          <p>Supporting student research across biotechnology, computational discovery, and life sciences innovation.</p>
         </div>
         <div class="collaborator-card reveal">
-          <span class="role">Community collaborator</span>
-          <h3>YRI</h3>
-          <p>Helping connect young researchers with opportunities to learn, collaborate, and publish stronger work.</p>
+          <span class="role">Physics and chemistry</span>
+          <h3><a href="https://www.linkedin.com/company/yriofficial/">YRI Fellowship</a></h3>
+          <p>Helping young researchers build rigorous work in the physical sciences and publish stronger projects.</p>
+        </div>
+        <div class="collaborator-card reveal">
+          <span class="role">Economics and finance</span>
+          <h3>FinanceMeta</h3>
+          <h3><a href="https://www.linkedin.com/company/the-insilico-lab/"></a>The Insilico Lab</h3>
+          <p>Powering work in markets, policy, capital, behavioral economics, and financial analysis.</p>
+        </div>
+        <div class="collaborator-card reveal">
+          <span class="role">Economics and finance</span>
+          <h3><a href="https://www.linkedin.com/company/the-bu1ld/"></a>The BU1LD</h3>
+          <p>Supporting builders exploring market systems, venture thinking, and applied finance research.</p>
+        </div>
+        <div class="collaborator-card reveal">
+          <span class="role">Technology and AI</span>
+          <h3><a href="https://www.linkedin.com/company/coldmatch/">ColdMatch</a></h3>
+          <p>Supporting technology and artificial intelligence tracks across ML, NLP, systems, and applied products.</p>
+        </div>
+        <div class="collaborator-card reveal">
+          <span class="role">Technology and AI</span>
+          <h3><a href="https://www.linkedin.com/company/quanticle-ai">Quanticle</a></h3>
+          <p>Powering AI-focused research in machine learning, computer vision, automation, and analytics.</p>
+        </div>
+        <div class="collaborator-card reveal">
+          <span class="role">Environmental sciences</span>
+          <h3><a href="https://www.linkedin.com/company/georgia-builder-association-gaba">GABA</a></h3>
+          <p>Supporting climate, sustainability, conservation, and applied environmental science work.</p>
+        </div>
+        <div class="collaborator-card reveal">
+          <span class="role">Society and policy</span>
+          <h3><a href="https://www.linkedin.com/company/minoritiesinstem/">Minorities in STEM</a></h3>
+          <p>Supporting research on society, ethics, global issues, humanities, and inclusive STEM pathways.</p>
         </div>
       </div>
     </div>
@@ -846,38 +967,44 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
       <div class="section-head reveal">
         <p class="eyebrow">Research Categories</p>
         <h2>Six categories, one challenge format</h2>
-        <p class="lede">Pick the category closest to your curiosity. Every category welcomes interdisciplinary approaches and innovative angles.</p>
+        <p class="lede">Pick the category closest to your curiosity. Each track welcomes interdisciplinary approaches and is shaped with support from relevant partners.</p>
       </div>
       <div class="tracks-grid">
         <div class="track-card reveal">
           <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-flask"/></svg></div>
-          <h4>Health and Life Sciences</h4>
-          <p>Biology, medicine, public health, neuroscience, biotechnology, and clinical research.</p>
+          <h4>Healthcare and Biotechnology</h4>
+          <p>Drug design, ADMET, docking, molecular dynamics, AI in discovery, medicine, and biotechnology.</p>
+          <span class="track-partner"><svg class="icon" aria-hidden="true"><use href="#icon-share"/></svg>Supported by The Insilico Lab</span>
         </div>
         <div class="track-card reveal">
           <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-chart"/></svg></div>
-          <h4>AI, Data Science, and Computing</h4>
-          <p>Machine learning, data analysis, software systems, computational modeling, and human-computer interaction.</p>
+          <h4>Economics and Finance</h4>
+          <p>Markets, policy, behavioral economics, capital analysis, financial systems, and applied research.</p>
+          <span class="track-partner"><svg class="icon" aria-hidden="true"><use href="#icon-share"/></svg>Powered by FinanceMeta and The BU1LD</span>
         </div>
         <div class="track-card reveal">
           <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-cpu"/></svg></div>
-          <h4>Engineering and Technology</h4>
-          <p>Robotics, devices, materials engineering, systems design, and applied innovation.</p>
+          <h4>Technology and Artificial Intelligence</h4>
+          <p>Machine learning, natural language processing, computer vision, systems, data products, and applied AI.</p>
+          <span class="track-partner"><svg class="icon" aria-hidden="true"><use href="#icon-share"/></svg>Powered by <a href="https://www.linkedin.com/company/coldmatch/">ColdMatch</a> and <a href="https://www.linkedin.com/company/quanticle-ai">Quanticle</a></span>
         </div>
         <div class="track-card reveal">
           <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-flask"/></svg></div>
-          <h4>Physical and Chemical Sciences</h4>
-          <p>Chemistry, physics, astronomy, materials science, and laboratory or theoretical research.</p>
+          <h4>Physics and Chemistry</h4>
+          <p>Chemistry, physics, materials science, theoretical modeling, laboratory methods, and scientific analysis.</p>
+          <span class="track-partner"><svg class="icon" aria-hidden="true"><use href="#icon-share"/></svg>Powered by <a href="https://www.linkedin.com/company/yriofficial/">YRI Fellowship</a></span>
         </div>
         <div class="track-card reveal">
           <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg></div>
-          <h4>Environmental and Earth Sciences</h4>
-          <p>Climate, sustainability, ecology, geology, conservation, and planetary systems.</p>
+          <h4>Environmental Sciences</h4>
+          <p>Climate, sustainability, conservation, ecology, environmental systems, and applied resilience research.</p>
+          <span class="track-partner"><svg class="icon" aria-hidden="true"><use href="#icon-share"/></svg>Powered by <a href="https://www.linkedin.com/company/georgia-builder-association-gaba">GABA</a></span>
         </div>
         <div class="track-card reveal">
           <div class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#icon-scale"/></svg></div>
           <h4>Social Sciences, Humanities, and Policy</h4>
-          <p>Sociology, education, economics, history, ethics, governance, and international relations.</p>
+          <p>Society, ethics, global issues, governance, history, education, international relations, and public policy.</p>
+          <span class="track-partner"><svg class="icon" aria-hidden="true"><use href="#icon-share"/></svg>Powered by <a href="https://www.linkedin.com/company/minoritiesinstem/">Minorities in STEM</a></span>
         </div>
       </div>
     </div>
@@ -906,14 +1033,130 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
         </div>
       </div>
 
+      <div class="judges-wrap reveal" id="judges">
+        <div class="judges-head">
+          <div>
+            <p class="eyebrow">Confirmed Judges</p>
+            <h3>Review panel</h3>
+          </div>
+          <p>A multidisciplinary panel with experience across analytics, AI, medicine, finance, policy, and student research.</p>
+        </div>
+        <div class="judges-grid">
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-chart"/></svg></span>
+              <span class="judge-role">Applied analytics</span>
+            </div>
+            <h4>Ahunna Theresa Ike-Njoku</h4>
+            <p>Columbia M.S. in Applied Analytics, Emerging Technologies concentration. Previously at BCG and UBS; Engineering Emerging Leader at Goldman Sachs.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-flask"/></svg></span>
+              <span class="judge-role">Neuroscience research</span>
+            </div>
+            <h4>Anvit Divekar</h4>
+            <p>Research experience with Harvard, Brown, and Emory. Founder of Organ Access Initiative and neuroscience student at Georgia Tech.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-cpu"/></svg></span>
+              <span class="judge-role">AI/ML research</span>
+            </div>
+            <h4>Shanmuka Gottimukkala</h4>
+            <p>USACO Gold, published researcher, and MIT Critical Data x NSRI lead researcher. Team Lead SWE Intern at STEM-E and NSRI Global Finance Officer.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-users"/></svg></span>
+              <span class="judge-role">STEM leadership</span>
+            </div>
+            <h4>Rhythm Bazari</h4>
+            <p>Founder of Minorities in STEM, focused on student-led STEM communities, service initiatives, and inclusive leadership.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-chart"/></svg></span>
+              <span class="judge-role">Markets and analytics</span>
+            </div>
+            <h4>Surya Radhakrishnan</h4>
+            <p>Junior at Tom Glenn High School, FP&amp;A intern, founder of Deal Room, and builder across markets, capital, and analytics.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-scale"/></svg></span>
+              <span class="judge-role">Law and policy</span>
+            </div>
+            <h4>Adya Gupta</h4>
+            <p>Student and aspiring lawyer focused on human rights, debate, Model UN, public speaking, leadership, and research.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-award"/></svg></span>
+              <span class="judge-role">Research judge</span>
+            </div>
+            <h4>Piyush Kolekar</h4>
+            <p>Confirmed judge for the Summer Research Hackathon 2026. Additional profile details forthcoming.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg></span>
+              <span class="judge-role">Confirmed judge</span>
+            </div>
+            <h4>Madhav Arora</h4>
+            <p>Confirmed judge for the Summer Research Hackathon 2026. Additional profile details forthcoming.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-cpu"/></svg></span>
+              <span class="judge-role">ML research</span>
+            </div>
+            <h4>Ryan Gomez</h4>
+            <p>ML researcher affiliated with Stanford and MIT, Lead Researcher at Synthica, and founder of BU1LD Labs and VertexED.ai, backed by Microsoft.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg></span>
+              <span class="judge-role">Clinical research</span>
+            </div>
+            <h4>Dr. Balraj Shukla</h4>
+            <p>Pediatric dentist, clinical academic, and sports journalist bringing medical and communication experience to the review process.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-cpu"/></svg></span>
+              <span class="judge-role">Machine learning</span>
+            </div>
+            <h4>Serhii Nechyporchuk</h4>
+            <p>Founding Machine Learning Engineer at Cascading AI and previously at Journey (YC W21), with early-stage AI systems experience.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-layers"/></svg></span>
+              <span class="judge-role">Engineering and finance</span>
+            </div>
+            <h4>Keyaan Merchant</h4>
+            <p>Student-athlete at Chattahoochee High School and NYRJ co-founder/head editor, with interests in engineering, finance, and music.</p>
+          </article>
+          <article class="judge-card">
+            <div class="judge-card-head">
+              <span class="judge-icon"><svg class="icon" aria-hidden="true"><use href="#icon-flask"/></svg></span>
+              <span class="judge-role">Chemistry and aerospace</span>
+            </div>
+            <h4>Ayat Mirha</h4>
+            <p>National Chemistry Olympiad NCTC-21 Top 13, BIEK Top 12, BSEK Top 10, BeQu'26, NYAS, GWG co-founder, LGIC ambassador, and aerospace/engineering finalist.</p>
+          </article>
+        </div>
+      </div>
+
       <div class="criteria-wrap reveal">
         <h3>Evaluation criteria</h3>
         <p>Submissions are scored across four equally weighted categories - 30 points each, 120 points total.</p>
         <div class="criteria-bars">
-          <div class="criteria-row"><span class="name">Innovation &amp; Creativity</span><div class="track-bar"><span data-pct="100"></span></div><span class="pts">30 / 30</span></div>
-          <div class="criteria-row"><span class="name">Technical Execution</span><div class="track-bar"><span data-pct="100"></span></div><span class="pts">30 / 30</span></div>
-          <div class="criteria-row"><span class="name">Impact &amp; Relevance</span><div class="track-bar"><span data-pct="100"></span></div><span class="pts">30 / 30</span></div>
-          <div class="criteria-row"><span class="name">Presentation &amp; Communication</span><div class="track-bar"><span data-pct="100"></span></div><span class="pts">30 / 30</span></div>
+          <div class="criteria-row"><span class="name">Innovation &amp; Creativity</span><div class="track-bar"><span data-pct="100"></span></div><span class="pts">30/30</span></div>
+          <div class="criteria-row"><span class="name">Technical Execution</span><div class="track-bar"><span data-pct="100"></span></div><span class="pts">30/30</span></div>
+          <div class="criteria-row"><span class="name">Impact &amp; Relevance</span><div class="track-bar"><span data-pct="100"></span></div><span class="pts">30/30</span></div>
+          <div class="criteria-row"><span class="name">Presentation &amp; Communication</span><div class="track-bar"><span data-pct="100"></span></div><span class="pts">30/30</span></div>
         </div>
       </div>
 
@@ -1083,6 +1326,8 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
         <ul>
           <li><a href="#overview">Overview</a></li>
           <li><a href="#tracks">Categories</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#judging">Judging</a></li>
           <li><a href="#timeline">Timeline</a></li>
           <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header">Register</a></li>
         </ul>
