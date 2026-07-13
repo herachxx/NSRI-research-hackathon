@@ -356,6 +356,88 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
 }
 .hero-cta{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:2.6rem;}
 
+.meeting-countdown{
+  max-width:720px;
+  margin:0 0 2rem;
+  padding:clamp(1.15rem,2.5vw,1.55rem);
+  border:1px solid rgba(159,194,245,.35);
+  border-left:4px solid #9FC2F5;
+  border-radius:var(--radius-md);
+  background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.045));
+  box-shadow:0 16px 34px rgba(0,0,0,.12);
+}
+.meeting-countdown-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;
+  margin-bottom:1rem;
+}
+.meeting-kicker{
+  display:flex;align-items:center;gap:.45rem;
+  font-family:var(--font-mono);font-size:.67rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:#9FC2F5;
+  margin-bottom:.3rem;
+}
+.meeting-kicker .icon{width:16px;height:16px;}
+.meeting-countdown h2{color:#fff;font-size:clamp(1.3rem,2.6vw,1.75rem);}
+.meeting-date{
+  flex-shrink:0;
+  font-family:var(--font-mono);font-size:.72rem;color:#C7D8EE;
+  padding:.4rem .55rem;border:1px solid var(--line-dark);border-radius:var(--radius-sm);
+}
+.countdown-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem;
+  width:100%;
+}
+.countdown-unit{
+  min-width:0;
+  padding:.8rem .65rem .65rem;
+  text-align:center;
+  border:1px solid var(--line-dark);border-radius:var(--radius-sm);
+  background:rgba(5,14,29,.28);
+}
+.countdown-number{
+  display:block;
+  font-family:var(--font-mono);font-size:clamp(1.55rem,4vw,2.25rem);font-weight:600;
+  line-height:1;color:#fff;font-variant-numeric:tabular-nums;
+}
+.countdown-label{
+  display:block;margin-top:.38rem;
+  font-family:var(--font-mono);font-size:.58rem;letter-spacing:.09em;
+  text-transform:uppercase;color:#9FB1CC;
+}
+.meeting-started{
+  display:none;align-items:center;gap:.75rem;
+  min-height:72px;padding:1rem 1.1rem;
+  border:1px solid rgba(159,194,245,.34);border-radius:var(--radius-sm);
+  background:rgba(31,95,209,.18);color:#fff;font-weight:600;
+}
+.meeting-started .icon{color:#9FC2F5;}
+.meeting-countdown.is-started .countdown-grid{display:none;}
+.meeting-countdown.is-started .meeting-started{display:flex;}
+.timezone-list{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem;
+  list-style:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line-dark);
+}
+.timezone-list li{display:flex;align-items:baseline;gap:.35rem;min-width:0;}
+.timezone-list strong{
+  color:#fff;font-family:var(--font-mono);font-size:.83rem;font-weight:600;
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.timezone-list span{color:#9FB1CC;font-family:var(--font-mono);font-size:.65rem;}
+
+@media (max-width:620px){
+  .meeting-countdown-head{display:block;}
+  .meeting-date{display:inline-block;margin-top:.75rem;}
+  .timezone-list{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:420px){
+  .meeting-countdown{padding:1rem;}
+  .countdown-grid{gap:.4rem;}
+  .countdown-unit{padding:.72rem .3rem .58rem;}
+  .countdown-label{font-size:.52rem;letter-spacing:.06em;}
+  .timezone-list{gap:.55rem .4rem;}
+  .timezone-list strong{font-size:.76rem;}
+}
+
 .meta-strip{
   display:flex;flex-wrap:wrap;
   border-top:1px solid var(--line-dark);
@@ -969,7 +1051,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
       </ul>
     </nav>
     <a class="btn btn-primary btn-sm header-cta" href="https://docs.google.com/forms/d/e/1FAIpQLScAJlXRn9PF2tBAhQS6nCtJ8N-crweUoCX2DsvmuuXswbVs-A/viewform?usp=header" target="_blank" rel="noopener noreferrer">REGISTER</a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">
       <svg class="icon" aria-hidden="true"><use href="#icon-menu" id="toggleIconUse"/></svg>
     </button>
   </div>
@@ -988,7 +1070,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
   </div>
 </header>
 
-<div class="image-header" aria-label="Summer Research Hackathon 2026 banner">
+<div class="image-header" role="img" aria-label="Summer Research Hackathon 2026 banner">
   <div class="image-header-track" aria-hidden="true">
     <div class="image-header-frame"><img src="assets/summer_research_hackathon_2026_clear.png" alt=""></div>
     <div class="image-header-frame"><img src="assets/summer_research_hackathon_2026_clear.png" alt=""></div>
@@ -1009,6 +1091,31 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
       <p class="eyebrow on-dark">National Student Research Institute</p>
       <h1><span>A five-day sprint from</span> <span>question&nbsp;to&nbsp;<em>research&nbsp;paper.</em></span></h1>
       <p class="abstract">This 5 day virtual research sprint, hosted by NSRI with research collaborators, track partners, and confirmed judges, will take place from July 13 to 18, 2026.</p>
+      <section class="meeting-countdown" id="meetingCountdown" data-target="2026-07-14T16:00:00Z" aria-labelledby="meetingCountdownTitle">
+        <div class="meeting-countdown-head">
+          <div>
+            <p class="meeting-kicker"><svg class="icon" aria-hidden="true"><use href="#icon-clock"/></svg> Live countdown</p>
+            <h2 id="meetingCountdownTitle">First meeting starts in</h2>
+          </div>
+          <time class="meeting-date" datetime="2026-07-14T12:00:00-04:00">July 14, 2026</time>
+        </div>
+        <div class="countdown-grid" id="countdownTimer" role="timer">
+          <div class="countdown-unit"><span class="countdown-number" data-countdown-unit="days">--</span><span class="countdown-label">Days</span></div>
+          <div class="countdown-unit"><span class="countdown-number" data-countdown-unit="hours">--</span><span class="countdown-label">Hours</span></div>
+          <div class="countdown-unit"><span class="countdown-number" data-countdown-unit="minutes">--</span><span class="countdown-label">Minutes</span></div>
+          <div class="countdown-unit"><span class="countdown-number" data-countdown-unit="seconds">--</span><span class="countdown-label">Seconds</span></div>
+        </div>
+        <div class="meeting-started" id="meetingStarted" role="status">
+          <svg class="icon" aria-hidden="true"><use href="#icon-video"/></svg>
+          <span>The first meeting has started.</span>
+        </div>
+        <ul class="timezone-list">
+          <li><strong>12:00 PM</strong><span>EDT</span></li>
+          <li><strong>9:30 PM</strong><span>IST</span></li>
+          <li><strong>9:00 PM</strong><span>PKT</span></li>
+          <li><strong>5:00 PM</strong><span>WAT</span></li>
+        </ul>
+      </section>
       <div class="collab-strip" aria-label="Event collaborators">
         <span class="label">In collaboration with</span>
         <span class="collab-badge">The Insilico Lab</span>
@@ -1524,6 +1631,51 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
       });
     }, {threshold:0.4});
     bars.forEach(function(b){ barIo.observe(b); });
+  }
+
+  // Countdown to the first meeting: July 14, 2026 at 12:00 PM EDT (16:00 UTC)
+  var countdown = document.getElementById('meetingCountdown');
+  if(countdown){
+    var targetTime = Date.parse(countdown.getAttribute('data-target'));
+    var countdownTimer = document.getElementById('countdownTimer');
+    var countdownTitle = document.getElementById('meetingCountdownTitle');
+    var units = {
+      days: countdown.querySelector('[data-countdown-unit="days"]'),
+      hours: countdown.querySelector('[data-countdown-unit="hours"]'),
+      minutes: countdown.querySelector('[data-countdown-unit="minutes"]'),
+      seconds: countdown.querySelector('[data-countdown-unit="seconds"]')
+    };
+
+    function padNumber(value){ return String(value).padStart(2, '0'); }
+
+    function updateCountdown(){
+      var remaining = targetTime - Date.now();
+      if(remaining <= 0){
+        countdown.classList.add('is-started');
+        countdownTitle.textContent = 'The first meeting has started';
+        countdown.setAttribute('aria-label', 'The first meeting started on July 14, 2026 at 12 PM EDT, 9:30 PM IST, 9 PM PKT, and 5 PM WAT.');
+        return false;
+      }
+
+      var totalSeconds = Math.floor(remaining / 1000);
+      var days = Math.floor(totalSeconds / 86400);
+      var hours = Math.floor((totalSeconds % 86400) / 3600);
+      var minutes = Math.floor((totalSeconds % 3600) / 60);
+      var seconds = totalSeconds % 60;
+
+      units.days.textContent = padNumber(days);
+      units.hours.textContent = padNumber(hours);
+      units.minutes.textContent = padNumber(minutes);
+      units.seconds.textContent = padNumber(seconds);
+      countdownTimer.setAttribute('aria-label', days + ' days, ' + hours + ' hours, ' + minutes + ' minutes, and ' + seconds + ' seconds until the first meeting.');
+      return true;
+    }
+
+    if(updateCountdown()){
+      var countdownInterval = window.setInterval(function(){
+        if(!updateCountdown()){ window.clearInterval(countdownInterval); }
+      }, 1000);
+    }
   }
 
 })();
