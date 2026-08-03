@@ -26,7 +26,7 @@ Google Sheet `1pEGiZT9exooUJwaHARCVWJIB1Ld81-uaQjwq0VqafdY`, tab "Grand Finale":
 - Rank 5 title: inserted an em dash between the title and its subtitle (they were on separate lines in the sheet cell).
 - Rank 18 title converted from ALL CAPS to title case for display.
 - Rank 12: collapsed a double space.
-- **Rank 10 ("The Taylor"): the sheet's project-title cell contains the track name instead of a title — displayed as "—" pending the real title.** ← needs user follow-up.
+- **Rank 10 ("The Taylor"): the sheet's project-title cell contains the track name instead of a title — displayed as "Project title to be confirmed" pending the real title.** ← needs user follow-up.
 - One sheet Notes cell contained pasted AI-prompt text; Notes were never intended for publication and are excluded.
 
 ## Out of scope (recommended follow-ups, not done)
@@ -38,4 +38,5 @@ Google Sheet `1pEGiZT9exooUJwaHARCVWJIB1Ld81-uaQjwq0VqafdY`, tab "Grand Finale":
 ## Testing
 
 - HTML parse check on all edited files.
-- Adversarial verification pass (parallel review agents): data accuracy vs. spreadsheet, HTML/CSS validity, cross-page nav consistency, accessibility of the new table/cards.
+- Adversarial verification pass (parallel review agents): data accuracy vs. spreadsheet, HTML/CSS validity (including a headless-Chromium render at 375–1280px), cross-page nav consistency, accessibility of the new table/cards.
+- Verification outcomes applied: removed an unsupported "900+ participants" claim from the results lede (that stat belongs to the previous hackathon), rewrote meta/og/twitter descriptions in past-event framing, changed the hero abstract to past tense, and added table/region labelling for screen readers and keyboard scrolling. Data accuracy: all 25 rows verified clean against the sheet.

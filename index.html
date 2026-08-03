@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Summer Research Hackathon 2026 | NSRI</title>
-<meta name="description" content="Join NSRI's global virtual Summer Research Hackathon, July 13-18, 2026. Build an original project across six tracks and compete for $1,000+.">
+<meta name="description" content="NSRI's global virtual Summer Research Hackathon ran July 13-18, 2026. Grand Finale results are now live: see the winners and final standings for all 25 finalists.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#0B1626">
 <link rel="canonical" href="https://nsri-hackathon.org/">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NSRI Summer Research Hackathon">
 <meta property="og:title" content="NSRI Summer Research Hackathon 2026">
-<meta property="og:description" content="A global five-day virtual research sprint for high school and undergraduate students, July 13-18, 2026.">
+<meta property="og:description" content="NSRI's global virtual research sprint for high school and undergraduate students ran July 13-18, 2026. Grand Finale results are now live.">
 <meta property="og:url" content="https://nsri-hackathon.org/">
 <meta property="og:image" content="https://nsri-hackathon.org/assets/summer_research_hackathon_2026_clear.png">
 <meta property="og:image:width" content="1580">
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="Summer Research Hackathon 2026 watercolor event cover">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="NSRI Summer Research Hackathon 2026">
-<meta name="twitter:description" content="A global five-day virtual research sprint for students, July 13-18, 2026.">
+<meta name="twitter:description" content="NSRI's global virtual research sprint ran July 13-18, 2026. Grand Finale results are now live.">
 <meta name="twitter:image" content="https://nsri-hackathon.org/assets/summer_research_hackathon_2026_clear.png">
 <script type="application/ld+json">
 {
@@ -850,6 +850,61 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
 }
 
 /* ============================================================
+   GRAND FINALE RESULTS
+   ============================================================ */
+section[id]{scroll-margin-top:90px;}
+
+.results-podium{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2rem;margin-bottom:3.2rem;
+}
+.winner-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  box-shadow:var(--shadow-sm);padding:1.5rem 1.6rem;
+  display:flex;flex-direction:column;gap:.65rem;
+}
+.winner-card.first{
+  grid-column:1/-1;border-color:var(--gold);box-shadow:var(--shadow-md);
+  background:linear-gradient(135deg, #fff 55%, var(--gold-soft) 100%);
+}
+.winner-place{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--gold-text);
+  display:flex;align-items:center;gap:.5rem;
+}
+.winner-place .icon{width:16px;height:16px;color:var(--gold);}
+.winner-team{font-size:1.35rem;}
+.winner-card.first .winner-team{font-size:1.7rem;}
+.winner-project{font-size:.9rem;color:var(--muted);line-height:1.55;}
+.winner-track{
+  margin-top:auto;font-family:var(--font-mono);font-size:.7rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--blue-text);
+}
+.results-subhead{font-size:1.35rem;margin:0 0 1.2rem;}
+.results-table-wrap{
+  overflow-x:auto;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius-md);box-shadow:var(--shadow-sm);
+}
+.results-table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:680px;}
+.results-table th{
+  font-family:var(--font-mono);font-size:.7rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);text-align:left;
+  padding:.9rem 1.2rem;background:var(--paper-dim);border-bottom:1px solid var(--line);
+}
+.results-table td{padding:.85rem 1.2rem;border-bottom:1px solid var(--line);vertical-align:top;}
+.results-table tr:last-child td{border-bottom:none;}
+.results-table td.rank{font-family:var(--font-mono);font-weight:600;color:var(--gold-text);white-space:nowrap;}
+.results-table td.team{font-weight:600;}
+.results-table td.track{font-family:var(--font-mono);font-size:.78rem;color:var(--blue-text);}
+.results-table tr.is-winner td{background:var(--gold-soft);}
+
+@media (max-width:900px){
+  .results-podium{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:560px){
+  .results-podium{grid-template-columns:1fr;}
+}
+
+/* ============================================================
    REGISTRATION
    ============================================================ */
 .register-context{
@@ -1030,6 +1085,12 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
 </svg>
 
 
+<div class="announce" role="note">
+  <a href="index.html#results">
+    Grand Finale results are live: <strong>See the winners and final standings</strong> <span aria-hidden="true">&rarr;</span>
+  </a>
+</div>
+
 <header class="site-header" id="siteHeader">
   <div class="header-inner">
     <a class="brand" href="index.html#top">
@@ -1041,6 +1102,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
     </a>
     <nav class="site-nav" aria-label="Primary">
       <ul>
+        <li><a href="index.html#results">Results</a></li>
         <li><a href="index.html#overview">Overview</a></li>
         <li><a href="index.html#tracks">Categories</a></li>
         <li><a href="judges.html">Judges</a></li>
@@ -1057,6 +1119,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
   </div>
   <div class="mobile-panel" id="mobilePanel">
     <div class="mobile-panel-inner">
+      <a href="index.html#results">Results</a>
       <a href="index.html#overview">Overview</a>
       <a href="index.html#tracks">Categories</a>
       <a href="judges.html">Judges</a>
@@ -1090,7 +1153,7 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
     <div class="container hero-inner">
       <p class="eyebrow on-dark">National Student Research Institution</p>
       <h1><span>A five-day sprint from</span> <span>question&nbsp;to&nbsp;<em>research&nbsp;paper.</em></span></h1>
-      <p class="abstract">This 5 day virtual research sprint, hosted by NSRI with research collaborators, track partners, and confirmed judges, will take place from July 13 to 18, 2026.</p>
+      <p class="abstract">This 5 day virtual research sprint, hosted by NSRI with research collaborators, track partners, and confirmed judges, took place from July 13 to 18, 2026.</p>
       <section class="meeting-countdown" id="meetingCountdown" data-target="2026-07-14T16:00:00Z" aria-labelledby="meetingCountdownTitle">
         <div class="meeting-countdown-head">
           <div>
@@ -1128,7 +1191,85 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
       <div class="meta-strip">
         <div class="meta-item"><div class="label">Duration</div><div class="value">5 Days</div></div>
         <div class="meta-item"><div class="label">Format</div><div class="value">Fully Virtual</div></div>
-        <div class="meta-item"><div class="label">Prize Pool</div><div class="value">$1,000+</div></div>
+        <div class="meta-item"><div class="label">Prize Pool</div><div class="value">$1,000</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ GRAND FINALE RESULTS ============================================================ -->
+  <section id="results" aria-labelledby="results-title" style="background:var(--paper-dim);">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow gold">Grand Finale &middot; July 25, 2026</p>
+        <h2 id="results-title">The results are in.</h2>
+        <p class="lede">Twenty-five finalists presented their research live to the judging panel at the Grand Finale. Congratulations to our five prize winners &mdash; and to every finalist who made it to the final round.</p>
+      </div>
+      <div class="results-podium">
+        <article class="winner-card first reveal">
+          <p class="winner-place"><svg class="icon" aria-hidden="true"><use href="#icon-award"/></svg> 1st Place &middot; $500</p>
+          <h3 class="winner-team">CyTrees</h3>
+          <p class="winner-project">Majority Illusion in Retrieval-Augmented Generation (RAG)</p>
+          <p class="winner-track">AI, Data Science, and Computing</p>
+        </article>
+        <article class="winner-card reveal">
+          <p class="winner-place"><svg class="icon" aria-hidden="true"><use href="#icon-award"/></svg> 2nd Place &middot; $250</p>
+          <h3 class="winner-team">Aditya Chandran Arvind</h3>
+          <p class="winner-project">Exact Cascade Uncertainty Under Pairwise Compression</p>
+          <p class="winner-track">AI, Data Science, and Computing</p>
+        </article>
+        <article class="winner-card reveal">
+          <p class="winner-place"><svg class="icon" aria-hidden="true"><use href="#icon-award"/></svg> 3rd Place &middot; $125</p>
+          <h3 class="winner-team">Team BIG BANG</h3>
+          <p class="winner-project">Assessing the Incremental Predictive Value of Satellite Thermal Imagery and a Geospatial Foundation Model for Monthly Building Electricity Consumption in New York City</p>
+          <p class="winner-track">AI, Data Science, and Computing</p>
+        </article>
+        <article class="winner-card reveal">
+          <p class="winner-place"><svg class="icon" aria-hidden="true"><use href="#icon-award"/></svg> 4th Place &middot; $75</p>
+          <h3 class="winner-team">Team VRD</h3>
+          <p class="winner-project">Behavioral Archetypes and the Cost of Cognitive Bias: A Cluster Analysis of Long-Term Win Rates in Online Poker</p>
+          <p class="winner-track">Social Sciences, Humanities, and Policy</p>
+        </article>
+        <article class="winner-card reveal">
+          <p class="winner-place"><svg class="icon" aria-hidden="true"><use href="#icon-award"/></svg> 5th Place &middot; $50</p>
+          <h3 class="winner-team">Navjeet Kaur</h3>
+          <p class="winner-project">PINIA: Physics-Informed Neural Integrity Audit &mdash; A Multidimensional Evidence Framework for Detecting Residual&ndash;Solution Error Misalignment and Hidden Failure Modes in Physics-Informed Neural Networks</p>
+          <p class="winner-track">AI, Data Science, and Computing</p>
+        </article>
+      </div>
+      <h3 class="results-subhead reveal" id="results-standings">Final standings &mdash; all 25 finalists</h3>
+      <div class="results-table-wrap reveal" role="region" aria-labelledby="results-standings" tabindex="0">
+        <table class="results-table" aria-labelledby="results-standings">
+          <thead>
+            <tr><th scope="col">Rank</th><th scope="col">Team / Participant</th><th scope="col">Project</th><th scope="col">Track</th></tr>
+          </thead>
+          <tbody>
+            <tr class="is-winner"><td class="rank">1</td><td class="team">CyTrees</td><td>Majority Illusion in Retrieval-Augmented Generation (RAG)</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr class="is-winner"><td class="rank">2</td><td class="team">Aditya Chandran Arvind</td><td>Exact Cascade Uncertainty Under Pairwise Compression</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr class="is-winner"><td class="rank">3</td><td class="team">Team BIG BANG</td><td>Assessing the Incremental Predictive Value of Satellite Thermal Imagery and a Geospatial Foundation Model for Monthly Building Electricity Consumption in New York City</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr class="is-winner"><td class="rank">4</td><td class="team">Team VRD</td><td>Behavioral Archetypes and the Cost of Cognitive Bias: A Cluster Analysis of Long-Term Win Rates in Online Poker</td><td class="track">Social Sciences, Humanities, and Policy</td></tr>
+            <tr class="is-winner"><td class="rank">5</td><td class="team">Navjeet Kaur</td><td>PINIA: Physics-Informed Neural Integrity Audit &mdash; A Multidimensional Evidence Framework for Detecting Residual&ndash;Solution Error Misalignment and Hidden Failure Modes in Physics-Informed Neural Networks</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr><td class="rank">6</td><td class="team">Vedha Tamilinian</td><td>Domain-Specific Machine Learning Prediction of Pathogenic FMR1 Missense Variants in the KH1 and KH2 Domains of FMRP</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr><td class="rank">7</td><td class="team">Team ATL</td><td>Simplicity Beats the Machine. A Five-Year Test of ML Forecasting at a Small Manufacturer.</td><td class="track">Engineering and Technology</td></tr>
+            <tr><td class="rank">8</td><td class="team">Dhairya Pathak</td><td>The Effect of Geomagnetic Storms on False Alarm Rates in TLE-Based Satellite Maneuver Detection</td><td class="track">Engineering and Technology</td></tr>
+            <tr><td class="rank">9</td><td class="team">Team Transatlantic</td><td>Recipient-Focused Hallucinations in AI-Generated Professor Outreach Emails: A Factorial Evaluation of Grounding and Verification</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr><td class="rank">10</td><td class="team">The Taylor</td><td>Project title to be confirmed</td><td class="track">Social Sciences, Humanities, and Policy</td></tr>
+            <tr><td class="rank">11</td><td class="team">NAZE</td><td>Global Ransomware Resilience under Constraint</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr><td class="rank">12</td><td class="team">Sentinel</td><td>DualSense: A Conceptual Dual-Biomarker Hydrogel Wound Dressing Integrating Electrochemical pH and Uric Acid Biosensors for Early Detection of Chronic Wound Infection</td><td class="track">Engineering and Technology</td></tr>
+            <tr><td class="rank">13</td><td class="team">MIRACLE</td><td>Minimum Viable Montage: How Few EEG Channels Does a Wearable Device Need to Reliably Detect Cognitive Overload?</td><td class="track">Health and Life Sciences</td></tr>
+            <tr><td class="rank">14</td><td class="team">The Mentalists</td><td>Difficulty-Stratified Evaluation of Confidence Calibration in Large Language Models</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr><td class="rank">15</td><td class="team">Siddra Ahmed</td><td>Optimising Energy-Water Co-Production from Low-Grade Waste Heat Through Coupled Bi2Te3 Thermoelectric Generation and Direct Contact Membrane Distillation</td><td class="track">Physical and Chemical Sciences</td></tr>
+            <tr><td class="rank">16</td><td class="team">Team NITRO</td><td>Coverage-Oriented Patrol Routing for Rhino Anti-Poaching in Etosha National Park: A Team-Orienteering Model on a Real Road Network</td><td class="track">Environmental and Earth Sciences</td></tr>
+            <tr><td class="rank">17</td><td class="team">Team Cipher</td><td>GraphTrust: Explainable Whole-Identity Graph Analysis for Detecting and Reducing Multi-Hop IAM Risk</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr><td class="rank">18</td><td class="team">RePurposeX</td><td>Network-Based Analysis of Shared Drug Targets and Side Effects for Psychiatric Drug Repurposing: Computational Prediction and Clinical Validation</td><td class="track">Health and Life Sciences</td></tr>
+            <tr><td class="rank">19</td><td class="team">SAKS</td><td>Can deep learning analysis of colour fundus photographs support the detection of hypertension in adults and provide additional information beyond traditional cardiovascular risk factors?</td><td class="track">Health and Life Sciences</td></tr>
+            <tr><td class="rank">20</td><td class="team">Hafza Osman</td><td>How Much Noise Can a Quantum Circuit Survive? A fidelity threshold study of the quantum Fourier transform</td><td class="track">Physical and Chemical Sciences</td></tr>
+            <tr><td class="rank">21</td><td class="team">Jo&atilde;o Pedro Marques Santos</td><td>Synthetic is All You Need: Closing The Sim-to-Real Gap in LIBRAS Isolated Recognition</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr><td class="rank">22</td><td class="team">Hertzan Alquizola II</td><td>Does County-Level Ozone Exposure Predict Adult COPD Prevalence? A Regression and Machine Learning Analysis Controlling for Smoking, Poverty, and Age</td><td class="track">Health and Life Sciences</td></tr>
+            <tr><td class="rank">23</td><td class="team">Team CyberMind (Zlatimir Petrov, Binita Chetry, Haresh Meghwar)</td><td>Prompt Injection in Orbit: Evaluating and Defending LLM Agents in Satellite Mission Operations</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr><td class="rank">24</td><td class="team">Hitarth Dangra</td><td>Mathematical Optimization of Drone Convergence: A Comparative Study of Shaped Reward Functions in Proximal Policy Optimization Simulations</td><td class="track">AI, Data Science, and Computing</td></tr>
+            <tr><td class="rank">25</td><td class="team">Rishika Basnet</td><td>Beyond the Paycheck: An Empirical Assessment of Worker Economic Well-being in a Changing Labor Market</td><td class="track">Social Sciences, Humanities, and Policy</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -1390,24 +1531,34 @@ section{padding:clamp(4rem,8vw,6.5rem) 0;}
     <div class="container">
       <div class="section-head reveal">
         <p class="eyebrow gold">Prizes &amp; Recognition</p>
-        <h2>Baseline prize pool: $1,000</h2>
-        <p class="lede">The prize pool may increase depending on total participant registration.</p>
+        <h2>Prize pool: $1,000</h2>
+        <p class="lede">Awarded across the top five placements at the Grand Finale on July 25, 2026.</p>
       </div>
       <div class="prize-rows">
         <div class="prize-row reveal">
           <span class="prize-rank">1st</span>
-          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="100"></span></div><span class="prize-recognition">Current Prize Structure</span></div>
-          <span class="prize-amount">$600</span>
+          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="100"></span></div><span class="prize-recognition">Awarded to CyTrees</span></div>
+          <span class="prize-amount">$500</span>
         </div>
         <div class="prize-row reveal">
           <span class="prize-rank">2nd</span>
-          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="50"></span></div><span class="prize-recognition">Current Prize Structure</span></div>
-          <span class="prize-amount">$300</span>
+          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="50"></span></div><span class="prize-recognition">Awarded to Aditya Chandran Arvind</span></div>
+          <span class="prize-amount">$250</span>
         </div>
         <div class="prize-row reveal">
           <span class="prize-rank">3rd</span>
-          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="17"></span></div><span class="prize-recognition">Current Prize Structure</span></div>
-          <span class="prize-amount">$100</span>
+          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="25"></span></div><span class="prize-recognition">Awarded to Team BIG BANG</span></div>
+          <span class="prize-amount">$125</span>
+        </div>
+        <div class="prize-row reveal">
+          <span class="prize-rank">4th</span>
+          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="15"></span></div><span class="prize-recognition">Awarded to Team VRD</span></div>
+          <span class="prize-amount">$75</span>
+        </div>
+        <div class="prize-row reveal">
+          <span class="prize-rank">5th</span>
+          <div class="prize-bar-wrap"><div class="prize-bar"><span data-pct="10"></span></div><span class="prize-recognition">Awarded to Navjeet Kaur</span></div>
+          <span class="prize-amount">$50</span>
         </div>
       </div>
       <div class="prizes-note">
