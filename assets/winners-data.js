@@ -3,7 +3,7 @@ window.NSRI_TEAMS = [
     "slug": "cytrees",
     "rank": 1,
     "score": 115.5,
-    "prize": "$600",
+    "prize": "$500",
     "team": "CyTrees",
     "members": [
       "Pranav Sai Reddi,        Ishaan Kamat,         Kartigan Sivathevan,            Sohan Kamsala"
@@ -21,7 +21,7 @@ window.NSRI_TEAMS = [
     "slug": "aditya-chandran-arvind",
     "rank": 2,
     "score": 115,
-    "prize": "$300",
+    "prize": "$250",
     "team": "Aditya Chandran Arvind",
     "members": [
       "Aditya Chandran Arvind"
@@ -38,7 +38,7 @@ window.NSRI_TEAMS = [
     "slug": "team-big-bang",
     "rank": 3,
     "score": 114,
-    "prize": "$100",
+    "prize": "$125",
     "team": "Team BIG BANG",
     "members": [
       "Klyde Steeven C. Manalang                     Adrian T. Cabangon                     Ivan James S. Frogoso"
@@ -55,7 +55,7 @@ window.NSRI_TEAMS = [
     "slug": "team-vrd",
     "rank": 4,
     "score": 113,
-    "prize": null,
+    "prize": "$75",
     "team": "Team VRD",
     "members": [
       "Viraj Gadeela, Rohan Parikh, Dhanvanth Lakshman"
@@ -72,7 +72,7 @@ window.NSRI_TEAMS = [
     "slug": "navjeet-kaur",
     "rank": 5,
     "score": 111.5,
-    "prize": null,
+    "prize": "$50",
     "team": "Navjeet Kaur",
     "members": [
       "Just solo"
