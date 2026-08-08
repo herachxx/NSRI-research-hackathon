@@ -195,8 +195,6 @@ button,input{font:inherit}
 .filter-row{display:flex;gap:8px;flex-wrap:wrap}
 .filter-button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;color:#506178;font-size:.72rem;font-weight:800;cursor:pointer}
 .filter-button.is-active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.unranked-note{display:flex;align-items:flex-start;gap:12px;background:var(--gold-soft);border:1px solid rgba(174,123,10,.18);padding:16px 18px;border-radius:16px;margin-bottom:28px;font-size:.85rem;color:#5b4a1e}
-.unranked-note strong{color:#312500}
 .finalist-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .finalist-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px;min-height:155px;transition:.22s ease}
 .finalist-card:nth-child(4n+1):nth-last-child(3),.finalist-card:nth-child(4n+1):nth-last-child(3)~.finalist-card{left:calc((100% + 12px)/2)}
