@@ -1,0 +1,22 @@
+/* The podium is intentionally displayed in the order: second, first, third. */
+.podium > .podium-card:nth-child(1){
+  background:linear-gradient(150deg,#edf1f4,#fff 55%);
+  border-color:rgba(125,139,153,.38);
+}
+.podium > .podium-card:nth-child(1)::before{background:#d7dee5}
+.podium .rank-disc[aria-label="Rank 2"]{
+  background:linear-gradient(145deg,#e1e6ea,#9eabb7);
+  color:#152238;
+  box-shadow:0 12px 28px rgba(82,97,111,.22);
+}
+
+.podium > .podium-card:nth-child(3){
+  background:linear-gradient(150deg,#f5e2d6,#fff 55%);
+  border-color:rgba(168,94,52,.32);
+}
+.podium > .podium-card:nth-child(3)::before{background:#e8bea5}
+.podium .rank-disc[aria-label="Rank 3"]{
+  background:linear-gradient(145deg,#d99a70,#a95f37);
+  color:#3d2115;
+  box-shadow:0 12px 28px rgba(139,72,35,.22);
+}
