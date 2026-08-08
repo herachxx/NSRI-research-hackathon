@@ -192,6 +192,7 @@ button,input{font:inherit}
 .finalist-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .finalist-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px;min-height:155px;transition:.22s ease}
 .finalist-card .dot{width:9px;height:9px;border-radius:50%;background:var(--coral);box-shadow:16px 0 0 var(--mint),32px 0 0 var(--blue);margin-bottom:27px}
+.finalist-rank{display:block;margin-bottom:8px;font-family:Georgia,serif;font-size:1.2rem;font-weight:700;color:var(--blue);line-height:1}
 .finalist-card h3{font-size:.9rem;line-height:1.25;margin:0 0 8px}
 .finalist-card p{font-size:.72rem;line-height:1.45;color:var(--muted);margin:0}
 .empty-state{grid-column:1/-1;text-align:center;padding:50px;color:var(--muted)}

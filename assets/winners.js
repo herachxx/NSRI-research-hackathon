@@ -2,8 +2,15 @@
   "use strict";
 
   var teams = Array.isArray(window.NSRI_TEAMS) ? window.NSRI_TEAMS : [];
-  var ranked = teams.filter(function(team){ return Number.isInteger(team.rank); }).sort(function(a,b){ return a.rank-b.rank; });
-  var finalists = teams.filter(function(team){ return !Number.isInteger(team.rank); }).sort(function(a,b){ return a.team.localeCompare(b.team); });
+  var published = teams.filter(function(team){
+    return Number.isInteger(team.rank) && team.rank >= 1 && team.rank <= 100;
+  }).sort(function(a,b){ return a.rank-b.rank; });
+  var podiumTeams = published.filter(function(team){ return team.rank <= 3; });
+  var ranks4to25 = published.filter(function(team){ return team.rank >= 4 && team.rank <= 25; });
+  var ranks26to100 = published.filter(function(team){ return team.rank >= 26 && team.rank <= 100; });
+  var archiveOnly = teams.filter(function(team){
+    return !Number.isInteger(team.rank) || team.rank < 1 || team.rank > 100;
+  });
 
   function escapeHtml(value){
     return String(value == null ? "" : value)
@@ -46,7 +53,7 @@
       '<video src="' + escapeHtml(media.url) + '" title="' + escapeHtml(team.team) + ' presentation video" controls preload="metadata" playsinline></video>' :
       (media.type === "link" ? '<a class="video-watch" href="' + escapeHtml(media.url) + '" target="_blank" rel="noopener"><span aria-hidden="true">&#9654;</span>Watch public recording</a>' :
       '<iframe src="' + escapeHtml(media.url) + '" title="' + escapeHtml(team.team) + ' presentation video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-    var placement = Number.isInteger(team.rank) ? "Rank #"+team.rank : "Top 100 Finalist · unranked";
+    var placement = Number.isInteger(team.rank) ? "Rank #"+team.rank : "Research archive";
     return '<article class="video-card"><div class="video-frame">' + visual + '</div><div class="video-card-copy"><span class="video-label">' + escapeHtml(placement) + '</span><h3>' + escapeHtml(team.team) + '</h3><p>' + escapeHtml(team.title) + '</p><a class="video-profile-link" href="' + profileUrl(team) + '">View team profile <span aria-hidden="true">&rarr;</span></a></div></article>';
   }
 
@@ -75,25 +82,25 @@
   function finalistCard(team){
     return '<article class="finalist-card reveal" data-track="' + escapeHtml(team.track) + '" data-search="' + escapeHtml((team.team+" "+team.title+" "+team.track).toLowerCase()) + '">' +
       '<div class="dot" aria-hidden="true"></div>' +
+      '<span class="finalist-rank">#' + team.rank + '</span>' +
       '<h3>' + escapeHtml(team.team) + '</h3>' +
       '<p>' + escapeHtml(team.title) + '</p>' +
-      '<a class="card-link" href="' + profileUrl(team) + '" aria-label="Open finalist profile for ' + escapeHtml(team.team) + '"></a>' +
+      '<a class="card-link" href="' + profileUrl(team) + '" aria-label="Open rank ' + team.rank + ': ' + escapeHtml(team.team) + '"></a>' +
     '</article>';
   }
 
   var podium = document.getElementById("podium");
   if(podium){
-    var top = ranked.slice(0,3);
-    var displayOrder = [top[1],top[0],top[2]].filter(Boolean);
+    var displayOrder = [podiumTeams[1],podiumTeams[0],podiumTeams[2]].filter(Boolean);
     podium.innerHTML = displayOrder.map(podiumCard).join("");
   }
 
   var rankedGrid = document.getElementById("rankedGrid");
-  if(rankedGrid) rankedGrid.innerHTML = ranked.slice(3).map(rankedCard).join("");
+  if(rankedGrid) rankedGrid.innerHTML = ranks4to25.map(rankedCard).join("");
 
   var videoRail = document.getElementById("videoRail");
   if(videoRail){
-    var videoTeams = teams.filter(function(team){ return team.videoPublic !== false && videoEmbed(team.video); }).sort(function(a,b){ return (a.rank || 999)-(b.rank || 999) || a.team.localeCompare(b.team); });
+    var videoTeams = published.filter(function(team){ return team.videoPublic !== false && videoEmbed(team.video); });
     videoRail.innerHTML = videoTeams.map(videoCard).join("");
     var previousVideo = document.getElementById("videoPrevious");
     var nextVideo = document.getElementById("videoNext");
@@ -105,16 +112,16 @@
   }
 
   var finalistGrid = document.getElementById("finalistGrid");
-  if(finalistGrid) finalistGrid.innerHTML = finalists.map(finalistCard).join("");
+  if(finalistGrid) finalistGrid.innerHTML = ranks26to100.map(finalistCard).join("");
 
-  document.querySelectorAll("[data-ranked-count]").forEach(function(node){ node.textContent = ranked.length; });
-  document.querySelectorAll("[data-finalist-count]").forEach(function(node){ node.textContent = finalists.length; });
-  document.querySelectorAll("[data-total-count]").forEach(function(node){ node.textContent = teams.length; });
+  document.querySelectorAll("[data-ranked-count]").forEach(function(node){ node.textContent = published.length; });
+  document.querySelectorAll("[data-finalist-count]").forEach(function(node){ node.textContent = ranks26to100.length; });
+  document.querySelectorAll("[data-total-count]").forEach(function(node){ node.textContent = published.length; });
 
   var filterRow = document.getElementById("trackFilters");
   var searchInput = document.getElementById("teamSearch");
   var activeTrack = "All";
-  var tracks = Array.from(new Set(finalists.map(function(team){ return team.track; }))).sort();
+  var tracks = Array.from(new Set(ranks26to100.map(function(team){ return team.track; }))).sort();
 
   function shortTrack(track){
     if(track.indexOf("AI,") === 0) return "AI & Data";

@@ -50,7 +50,14 @@
   var metaDescription = document.querySelector('meta[name="description"]');
   if(metaDescription) metaDescription.setAttribute("content",team.team + " — " + team.title + ". NSRI Summer Research Hackathon 2026.");
 
-  var ordered = teams.slice().sort(function(a,b){ return (a.rank || 999)-(b.rank || 999) || a.team.localeCompare(b.team); });
+  var isPublished = Number.isInteger(team.rank) && team.rank >= 1 && team.rank <= 100;
+  var published = teams.filter(function(item){
+    return Number.isInteger(item.rank) && item.rank >= 1 && item.rank <= 100;
+  }).sort(function(a,b){ return a.rank-b.rank; });
+  var archiveOnly = teams.filter(function(item){
+    return !Number.isInteger(item.rank) || item.rank < 1 || item.rank > 100;
+  }).sort(function(a,b){ return a.team.localeCompare(b.team); });
+  var ordered = isPublished ? published : archiveOnly;
   var currentIndex = ordered.findIndex(function(item){ return item.slug === team.slug; });
   var next = ordered[(currentIndex+1)%ordered.length];
   var members = team.members.reduce(function(list,item){
@@ -64,11 +71,11 @@
   var videoBlock = media ?
     '<div class="profile-card profile-video-card"><p class="eyebrow">Watch the research</p><h2>Presentation video</h2>' + videoPlayer + '</div>' : '';
 
-  var rankLabel = Number.isInteger(team.rank) ? "Rank #" + team.rank : "Top 100 finalist · unranked";
+  var rankLabel = isPublished ? "Rank #" + team.rank : "Research archive";
   root.innerHTML =
     '<section class="winner-masthead"><div class="shell">' +
       '<a class="crumb" href="winners.html">← 2026 winner gallery</a>' +
-      '<div class="profile-badges"><span class="profile-badge' + (team.rank && team.rank<=3?' gold':'') + '">' + escapeHtml(rankLabel) + '</span><span class="profile-badge">' + escapeHtml(team.track) + '</span>' + (team.prize?'<span class="profile-badge gold">' + escapeHtml(team.prize) + ' award</span>':'') + '</div>' +
+      '<div class="profile-badges"><span class="profile-badge' + (isPublished && team.rank<=3?' gold':'') + '">' + escapeHtml(rankLabel) + '</span><span class="profile-badge">' + escapeHtml(team.track) + '</span>' + (team.prize?'<span class="profile-badge gold">' + escapeHtml(team.prize) + ' award</span>':'') + '</div>' +
       '<h1>' + escapeHtml(team.team) + '</h1>' +
       '<p>' + escapeHtml(team.title) + '</p>' +
     '</div></section>' +

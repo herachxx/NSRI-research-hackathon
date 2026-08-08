@@ -427,7 +427,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "aarthi-ethirraj",
-    "rank": null,
+    "rank": 61,
     "score": null,
     "prize": null,
     "team": "Aarthi Ethirraj",
@@ -444,7 +444,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "abhiraj-chand",
-    "rank": null,
+    "rank": 64,
     "score": null,
     "prize": null,
     "team": "Abhiraj Chand",
@@ -460,8 +460,127 @@ window.NSRI_TEAMS = [
     "materials": null
   },
   {
+    "slug": "akshaj-rali",
+    "rank": 80,
+    "score": null,
+    "prize": null,
+    "team": "Akshaj Rali",
+    "members": [
+      "Akshaj Rali"
+    ],
+    "track": "AI, Data Science, and Computing",
+    "title": "Comparing Accuracy, Reasoning Quality, and Error Patterns of GPT-4o, Claude, and Gemini on SAT Math Questions: A Pilot Study Using an LLM-as-Judge Rubric",
+    "summary": "Large language models are increasingly used by students as informal tutors and test-preparation aids, yet direct comparisons of leading models' accuracy, reasoning soundness, and explanatory clarity on SAT-style math items remain limited. This study compared GPT-4o, Perplexity, and Gemini on 30 SAT-style math questions spanning algebra, geometry, exponents, probability, and functions (90 responses total). Each response was scored against a ground-truth worked solution using a rubric-based LLM-as-judge scoring model on three dimensions: Correctness (binary match to the expected final answer), Accuracy (soundness of the mathematical reasoning independent of the final answer), and Clarity (quality of the explanation). All three models tied for correctness (96.7%, 29/30), each missing exactly one item for different reasons. Perplexity had the highest average reasoning accuracy (4.90/5), narrowly ahead of GPT-4o (4.87/5) and Gemini (4.80/5), but the lowest average clarity (3.00/5), reflecting a consistently terse style. Gemini had the highest average clarity (4.97/5); GPT-4o was intermediate (4.00/5). On this pilot sample, raw correctness did not differentiate the three models at all. Reasoning quality and explanatory clarity did. Each model's single error was diagnostic of a distinct failure mode: GPT-4o's derivation contradicted its own stated answer, Perplexity correctly flagged an ambiguous problem but declined to guess, and Gemini answered the same ambiguous problem with an unhelpful literal reading. This suggests error-type analysis is more informative than accuracy alone when comparing current LLMs on SAT-level math. Findings should be treated as preliminary, given the small item count and single-judge scoring design.",
+    "paper": null,
+    "deck": null,
+    "video": null,
+    "materials": null
+  },
+  {
+    "slug": "akshara-konduru",
+    "rank": 71,
+    "score": null,
+    "prize": null,
+    "team": "Akshara Konduru",
+    "members": [
+      "Akshara Konduru"
+    ],
+    "track": "AI, Data Science, and Computing",
+    "title": "Absence Of Vital External Financial Factors In Current ADR Prioritization Models",
+    "summary": "Active Debris Removal (ADR) is increasingly critical to space sustainability, yet debris-related losses are projected to cost the space industry $25.8-42.3 billion over the next decade. This study examines the extent to which current ADR prioritization models incorporate external financial risk factors such as insurance losses, satellite replacement value, and cascade-related industry damage rather than physical collision risk and internal mission-resource costs alone. A scoping literature review of 9 ADR prioritization models methodologies using a computational model was conducted, with each source coded as explicitly including, considering-and-excluding, or not addressing external financial risk. All 9 reviewed sources were coded as not addressing external financial risk, relying instead on physical/orbital criteria such as mass, collision probability, and orbital lifetime, and internal mission-resource constraints such as fuel and mission duration. These findings reveal a gap within the vital calculations of current ADR prioritization models, ignoring external financial constraints which have significant influence on the selection of space debris. This suggests the future necessity to include such factors into ADR prioritization models to ensure effective decision making in such a fast-growing crisis. Given the limited sample size, these findings should be interpreted as an illustrative pattern rather than a comprehensive field-wide conclusion.",
+    "paper": null,
+    "deck": null,
+    "video": null,
+    "materials": null
+  },
+  {
+    "slug": "alikhan-myrzakassym",
+    "rank": 87,
+    "score": null,
+    "prize": null,
+    "team": "Alikhan Myrzakassym",
+    "members": [
+      "Alikhan Myrzakassym"
+    ],
+    "track": "Health and Life Sciences",
+    "title": "Does Simplifying Medical Language Affect AI Diagnostic Accuracy? A Comparative Evaluation of Leading AI Chatbots",
+    "summary": "AI chatbots are increasingly used as a source of health information, yet patients rarely describe their symptoms using professional medical terminology. This paper examines whether translating clinical case descriptions from professional medical language into everyday patient language affects the diagnostic accuracy of conversational AI. Thirty-five standardized clinical vignettes spanning 10 medical specialties were each written in two versions, professional and everyday, producing 70 vignettes in total. Both versions were independently evaluated by two leading AI models, Gemini 3.5 Flash and ChatGPT GPT-5.5 Instant, using a standardized diagnostic prompt. A public survey of 74 respondents and an expert survey of 3 medical professionals were also conducted to examine user preferences for AI medical communication. Both models achieved 100% diagnostic accuracy across both language formats, showing no measurable difference between professional and everyday phrasing. Survey results indicate that 95% of respondents prefer everyday language or a mix of everyday and medical terms, and the 3 clinicians surveyed confirmed that patients naturally describe symptoms in non-technical language. Together, these results indicate that current AI models can interpret lay-language symptom descriptions without any loss of diagnostic performance, and that patients strongly favor patient-friendly communication over strictly clinical phrasing.",
+    "paper": null,
+    "deck": null,
+    "video": null,
+    "materials": null
+  },
+  {
+    "slug": "amal-basit-ahmed",
+    "rank": 69,
+    "score": null,
+    "prize": null,
+    "team": "Amal Basit Ahmed",
+    "members": [
+      "Amal Basit Ahmed"
+    ],
+    "track": "Engineering and Technology",
+    "title": "Evaluating the Influence of Structural Weight Constraints on the Performance Benefits of Aerodynamic Optimization in Reusable Launch Vehicles",
+    "summary": "Reusable launch vehicles (RLVs) rely on aerodynamic optimization to improve atmospheric flight efficiency and reduce performance losses. Aerodynamic improvements may require additional structural mass that negatively affects overall vehicle performance. This study investigates the influence of structural weight constraints on the performance benefits obtained through aerodynamic optimization in RLVs using a combined literature review and computational modeling approach. A Python-based performance model was developed using a Falcon 9-class first stage as a reference vehicle, incorporating the Tsiolkovsky rocket equation, atmospheric density variation, and aerodynamic drag calculations to estimate effective delta-v. Aerodynamic optimization was simulated through drag coefficient reductions of 5%, 10%, 15%, and 20%, while structural penalties were modeled through corresponding dry mass increases of 5% to 20%. The model evaluated 25 design scenarios to determine how structural mass affected the performance gains associated with reduced aerodynamic drag. The baseline vehicle produced an ideal delta-v of 8.57 km/s and an effective delta-v of approximately 8.55 km/s after estimated aerodynamic losses. Results showed that aerodynamic improvements consistently increased effective delta-v; however, the magnitude of these gains was substantially smaller than the performance losses caused by increased structural mass. A 20% reduction in drag coefficient produced only a minor improvement in effective delta-v, while a 20% increase in dry mass resulted in a significantly larger reduction in vehicle performance. These findings demonstrate that aerodynamic optimization in reusable launch vehicles must be evaluated alongside structural mass constraints, as improvements in aerodynamic efficiency may be limited by the additional mass required to achieve them. The study highlights the importance of integrated aerodynamic and structural optimization approaches for future reusable launch vehicle design.",
+    "paper": null,
+    "deck": null,
+    "video": null,
+    "materials": null
+  },
+  {
+    "slug": "annika-razdan",
+    "rank": 79,
+    "score": null,
+    "prize": null,
+    "team": "Annika Razdan",
+    "members": [
+      "Annika Razdan"
+    ],
+    "track": "Health and Life Sciences",
+    "title": "DermMatch: An AI Based Support Tool for Biologic Selection in Atopic Dermatitis",
+    "summary": "This study focuses on a common disease called atopic dermatitis (AD), and how selecting an optimal biologic therapy for those with moderate-to-severe AD still remains a challenge. Treatment decisions are often based on a trial-and-error approach, which results in prolonged patient burden. This study developed an application, called DermMatch, which uses AI algorithms to support personalized biologic selection using baseline clinical images. The application was developed using Claude Opus 4.8, and included two possible options for treatment: Dupixent and Ebglyss. Performance was evaluated using 26 patient cases with treatment outcomes documented. DermMatch was able to accurately predict 50% of the cases, and confidence scores were generated for each prediction. The findings demonstrated the feasibility of an software-assisted biologic recommendation while highlighting the need for larger sample sizes to improve predictive performance. This proof-of-concept study demonstrates the potential of modern technology to assist clinicians in selecting a biologic therapy using baseline clinical images and other clinical factors. Further validation using larger datasets and other biologic and JAK inhibitor therapies will help improve the clinical applicability of the model and produce positive outcomes in AD patients. As AI technologies continue to advance, tools such as DermMatch may help improve treatment outcomes, reduce time to effective therapy, and support personalized treatments for patients suffering from atopic dermatitis.",
+    "paper": null,
+    "deck": null,
+    "video": "https://drive.google.com/file/d/1oKYDRQyvJGPaktQNVbTS8TfMHOhE11av/view?usp=drive_link",
+    "materials": null
+  },
+  {
+    "slug": "anshuman-kumar",
+    "rank": 36,
+    "score": null,
+    "prize": null,
+    "team": "ANSHUMAN KUMAR",
+    "members": [
+      "ANSHUMAN KUMAR"
+    ],
+    "track": "Environmental and Earth Sciences",
+    "title": "An Operational Evidence Integration Framework for Environmental DNA-Based Biodiversity Assessment",
+    "summary": "Environmental DNA (eDNA) has transformed biodiversity monitoring by enabling sensitive, non-invasive detection of species across diverse ecosystems. However, effective conservation decisions require interpretation of molecular evidence alongside ecological context and associated uncertainties, while standardized approaches for integrating these complementary evidence streams remain limited. This study addresses this methodological gap by proposing the Operational Evidence Integration Framework (OEIF), a qualitative post-analysis framework for transparent and consistent interpretation of environmental DNA-based biodiversity assessments. The framework was conceptually developed through a targeted review of environmental DNA methodologies and evidence integration principles. As its principal reporting output, the Conservation Evidence Profile (CEP) was introduced to synthesize molecular evidence, ecological consistency, key uncertainties, and evidence-informed management considerations within a standardized reporting structure. The framework was retrospectively demonstrated using three representative peer-reviewed environmental DNA case studies spanning invasive species monitoring, threatened species conservation, and catchment-scale biodiversity assessment. The OEIF provides a structured workflow for integrating molecular and ecological evidence while explicitly documenting uncertainty. Across the case studies, the framework consistently organized diverse evidence into transparent and reproducible Conservation Evidence Profiles, illustrating its applicability across different taxa, ecological settings, and environmental DNA methodologies. Rather than replacing laboratory protocols, bioinformatic analyses, ecological surveys, or expert judgement, the framework complements existing workflows by improving evidence interpretation and communication. Overall, the OEIF and CEP provide a conceptual foundation for standardized post-analysis evidence integration in environmental DNA-based biodiversity assessment and establish a basis for future prospective evaluation and refinement across broader conservation applications.",
+    "paper": null,
+    "deck": null,
+    "video": null,
+    "materials": null
+  },
+  {
+    "slug": "anvita-kar",
+    "rank": 68,
+    "score": null,
+    "prize": null,
+    "team": "Anvita Kar",
+    "members": [
+      "Anvita Kar"
+    ],
+    "track": "AI, Data Science, and Computing",
+    "title": "Confident but Wrong: How Three Leading Large Language Models Resist Social Pressure on Verified Factual Claims",
+    "summary": "Large Language models (LLMS) are now increasingly trusted as authoritative sources, but two failure modes still threaten that trust: hallucination (confidently stating false information) and sycophancy (abandoning a correct answer under pressure from the user). This study examined both behaviors, and is focused on the strategies that models use to resist sycophantic pressure, across the three most used LLMs. Google’s Gemini 3.5 Flash, Anthropic’s Claude Sonnet 5, and OpenAI’s ChatGPT 5.5 were each tested on an identical set of 15 factual questions spanning science, geography/history. And general knowledge. Each correct initial answer was subjected to two rounds of standardized, evidence-free pushback, with responses scored on a 0-2 resistance scale and qualitatively sorted into one of four resistance-strategy categories. A follow-up of 9 questions tested three vulnerable instances found from the initial test by using fabricated sources for pushback. All three models achieved 100% initial accuracy (45/45); no hallucinations were observed. However, when faced with pushback on all questions, Gemini caved on 3 of the 15 questions (average resistance 1.8/2.0), while Claude and ChatGPT never caved (2.0/2.0 each). Failures seemed to cluster specifically on questions with a real, exploitable unit or definitional ambiguity. The difficulty of each question seemed to have no effect on the number of caves. Qualitative coding revealed that each model relies on a distinct resistance strategy: Gemini generates exhaustive alternative technicalities, Claude explicitly names the pushback pattern, and ChatGPT uses a consistent scaffolded restatement. Sycophancy risk in current generation LLMs is better predicted by monitoring technical ambiguity of the questions presented to the model. Predictive measures must also monitor the resistance strategy, not just resistance rate, as a metric while comparing hallucinations in models. Artificial Intelligence has evolved exponentially in the last year and measuring its dimensions of trustworthiness now has direct implications in education and other high-stake domains.",
+    "paper": null,
+    "deck": null,
+    "video": null,
+    "materials": null
+  },
+  {
     "slug": "apoorva-kalki",
-    "rank": null,
+    "rank": 60,
     "score": null,
     "prize": null,
     "team": "Apoorva Kalki",
@@ -478,7 +597,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "arneeb-gull-solo",
-    "rank": null,
+    "rank": 41,
     "score": null,
     "prize": null,
     "team": "Arneeb Gull (Solo)",
@@ -495,7 +614,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "ayesha-masood-chishti",
-    "rank": null,
+    "rank": 99,
     "score": null,
     "prize": null,
     "team": "Ayesha Masood Chishti",
@@ -512,7 +631,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "bhavithran-ananthan",
-    "rank": null,
+    "rank": 27,
     "score": null,
     "prize": null,
     "team": "Bhavithran Ananthan",
@@ -546,7 +665,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "biohack",
-    "rank": null,
+    "rank": 29,
     "score": null,
     "prize": null,
     "team": "BIOHACK",
@@ -563,7 +682,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "bytebit",
-    "rank": null,
+    "rank": 52,
     "score": null,
     "prize": null,
     "team": "ByteBit",
@@ -580,7 +699,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "catalyst",
-    "rank": null,
+    "rank": 93,
     "score": null,
     "prize": null,
     "team": "Catalyst",
@@ -614,7 +733,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "duo-biotics",
-    "rank": null,
+    "rank": 40,
     "score": null,
     "prize": null,
     "team": "Duo-biotics",
@@ -631,7 +750,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "eegnius",
-    "rank": null,
+    "rank": 44,
     "score": null,
     "prize": null,
     "team": "EEGnius",
@@ -648,7 +767,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "eugene-lotsu",
-    "rank": null,
+    "rank": 42,
     "score": null,
     "prize": null,
     "team": "Eugene Lotsu",
@@ -665,7 +784,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "finelytics",
-    "rank": null,
+    "rank": 51,
     "score": null,
     "prize": null,
     "team": "Finelytics",
@@ -682,7 +801,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "francis-kwarteng",
-    "rank": null,
+    "rank": 33,
     "score": null,
     "prize": null,
     "team": "Francis Kwarteng",
@@ -699,7 +818,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "geetham-sree-shanmukh-revu",
-    "rank": null,
+    "rank": 94,
     "score": null,
     "prize": null,
     "team": "Geetham Sree Shanmukh Revu",
@@ -716,7 +835,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "gennov",
-    "rank": null,
+    "rank": 91,
     "score": null,
     "prize": null,
     "team": "GenNov",
@@ -733,7 +852,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "gyuyeon-kim",
-    "rank": null,
+    "rank": 32,
     "score": null,
     "prize": null,
     "team": "Gyuyeon Kim",
@@ -750,7 +869,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "haripraveer-puranam",
-    "rank": null,
+    "rank": 83,
     "score": null,
     "prize": null,
     "team": "Haripraveer Puranam",
@@ -767,7 +886,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "hasbiyallah-shittu",
-    "rank": null,
+    "rank": 95,
     "score": null,
     "prize": null,
     "team": "Hasbiyallah Shittu",
@@ -784,7 +903,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "hebbian-learners",
-    "rank": null,
+    "rank": 66,
     "score": null,
     "prize": null,
     "team": "Hebbian Learners",
@@ -801,7 +920,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "ilma-aijaz",
-    "rank": null,
+    "rank": 96,
     "score": null,
     "prize": null,
     "team": "Ilma Aijaz",
@@ -818,10 +937,10 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "janya-talib",
-    "rank": null,
+    "rank": 86,
     "score": null,
     "prize": null,
-    "team": "Janya talib",
+    "team": "Janya Talib",
     "members": [
       "Janya"
     ],
@@ -835,7 +954,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "jihane-nhari",
-    "rank": null,
+    "rank": 38,
     "score": null,
     "prize": null,
     "team": "Jihane NHARI",
@@ -852,7 +971,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "kshitij-dewan",
-    "rank": null,
+    "rank": 84,
     "score": null,
     "prize": null,
     "team": "Kshitij Dewan",
@@ -869,7 +988,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "lara-penna-sacca",
-    "rank": null,
+    "rank": 70,
     "score": null,
     "prize": null,
     "team": "Lara Penna Saccá",
@@ -886,7 +1005,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "leighton-ng-wen-quan",
-    "rank": null,
+    "rank": 77,
     "score": null,
     "prize": null,
     "team": "Leighton Ng Wen Quan",
@@ -903,7 +1022,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "life",
-    "rank": null,
+    "rank": 26,
     "score": null,
     "prize": null,
     "team": "Life",
@@ -920,7 +1039,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "maftuna-murodimova",
-    "rank": null,
+    "rank": 98,
     "score": null,
     "prize": null,
     "team": "Maftuna Murodimova",
@@ -937,7 +1056,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "maryam-akmal",
-    "rank": null,
+    "rank": 46,
     "score": null,
     "prize": null,
     "team": "Maryam Akmal",
@@ -954,7 +1073,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "md-zariful-huq",
-    "rank": null,
+    "rank": 39,
     "score": null,
     "prize": null,
     "team": "MD. Zariful Huq",
@@ -971,7 +1090,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "mrco",
-    "rank": null,
+    "rank": 72,
     "score": null,
     "prize": null,
     "team": "MRCO$",
@@ -988,7 +1107,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "mya-lewis",
-    "rank": null,
+    "rank": 59,
     "score": null,
     "prize": null,
     "team": "Mya Lewis",
@@ -1005,7 +1124,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "neurorecover",
-    "rank": null,
+    "rank": 81,
     "score": null,
     "prize": null,
     "team": "NeuroRecover",
@@ -1039,7 +1158,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "oluwatoba-samuel-oyagbemi",
-    "rank": null,
+    "rank": 35,
     "score": null,
     "prize": null,
     "team": "Oluwatoba Samuel Oyagbemi",
@@ -1056,7 +1175,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "oncopilot",
-    "rank": null,
+    "rank": 47,
     "score": null,
     "prize": null,
     "team": "OncoPilot",
@@ -1090,7 +1209,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "poojya-pannerkumar",
-    "rank": null,
+    "rank": 50,
     "score": null,
     "prize": null,
     "team": "Poojya Pannerkumar",
@@ -1107,7 +1226,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "pranvi-balusu",
-    "rank": null,
+    "rank": 34,
     "score": null,
     "prize": null,
     "team": "Pranvi Balusu",
@@ -1124,7 +1243,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "project-janus",
-    "rank": null,
+    "rank": 31,
     "score": null,
     "prize": null,
     "team": "Project JANUS",
@@ -1141,7 +1260,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "psychic-psychos",
-    "rank": null,
+    "rank": 100,
     "score": null,
     "prize": null,
     "team": "psychic psychos",
@@ -1158,7 +1277,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "rabee-aman",
-    "rank": null,
+    "rank": 53,
     "score": null,
     "prize": null,
     "team": "Rabee Aman",
@@ -1175,7 +1294,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "ridhima-puri",
-    "rank": null,
+    "rank": 90,
     "score": null,
     "prize": null,
     "team": "Ridhima Puri",
@@ -1192,7 +1311,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "ritvik-diada",
-    "rank": null,
+    "rank": 82,
     "score": null,
     "prize": null,
     "team": "Ritvik Diada",
@@ -1209,7 +1328,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "rozon-pal",
-    "rank": null,
+    "rank": 75,
     "score": null,
     "prize": null,
     "team": "Rozon Pal",
@@ -1226,7 +1345,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "rt",
-    "rank": null,
+    "rank": 37,
     "score": null,
     "prize": null,
     "team": "RT",
@@ -1243,7 +1362,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "rudra-boghani",
-    "rank": null,
+    "rank": 30,
     "score": null,
     "prize": null,
     "team": "Rudra Boghani",
@@ -1260,7 +1379,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "saranya-goel",
-    "rank": null,
+    "rank": 45,
     "score": null,
     "prize": null,
     "team": "Saranya Goel",
@@ -1277,7 +1396,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "shashini-vijay",
-    "rank": null,
+    "rank": 54,
     "score": null,
     "prize": null,
     "team": "Shashini Vijay",
@@ -1294,7 +1413,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "shreeya-r-shinde",
-    "rank": null,
+    "rank": 57,
     "score": null,
     "prize": null,
     "team": "Shreeya R Shinde",
@@ -1311,7 +1430,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "sistharakshnaa",
-    "rank": null,
+    "rank": 85,
     "score": null,
     "prize": null,
     "team": "Sistharakshnaa",
@@ -1328,7 +1447,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "srikar-gandrakota",
-    "rank": null,
+    "rank": 78,
     "score": null,
     "prize": null,
     "team": "Srikar Gandrakota",
@@ -1362,7 +1481,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "supriyaa-kannan",
-    "rank": null,
+    "rank": 56,
     "score": null,
     "prize": null,
     "team": "Supriyaa Kannan",
@@ -1379,7 +1498,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "tazaeen-zahra",
-    "rank": null,
+    "rank": 76,
     "score": null,
     "prize": null,
     "team": "Tazaeen Zahra",
@@ -1396,7 +1515,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-aegis-muhammad-ehsan",
-    "rank": null,
+    "rank": 58,
     "score": null,
     "prize": null,
     "team": "Team Aegis (Muhammad Ehsan)",
@@ -1413,7 +1532,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-apex",
-    "rank": null,
+    "rank": 63,
     "score": null,
     "prize": null,
     "team": "Team Apex",
@@ -1430,7 +1549,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-boyuan-and-oliver",
-    "rank": null,
+    "rank": 65,
     "score": null,
     "prize": null,
     "team": "Team Boyuan and Oliver",
@@ -1447,7 +1566,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-challenge",
-    "rank": null,
+    "rank": 55,
     "score": null,
     "prize": null,
     "team": "Team Challenge",
@@ -1464,7 +1583,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-dibong",
-    "rank": null,
+    "rank": 88,
     "score": null,
     "prize": null,
     "team": "TEAM DIBONG",
@@ -1481,7 +1600,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-ed",
-    "rank": null,
+    "rank": 92,
     "score": null,
     "prize": null,
     "team": "Team ED",
@@ -1498,7 +1617,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-hebbian-learners",
-    "rank": null,
+    "rank": 67,
     "score": null,
     "prize": null,
     "team": "Team Hebbian learners",
@@ -1515,7 +1634,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-kaf",
-    "rank": null,
+    "rank": 62,
     "score": null,
     "prize": null,
     "team": "Team KAF",
@@ -1532,7 +1651,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-ma",
-    "rank": null,
+    "rank": 74,
     "score": null,
     "prize": null,
     "team": "Team MA",
@@ -1549,7 +1668,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-mashty",
-    "rank": null,
+    "rank": 89,
     "score": null,
     "prize": null,
     "team": "Team Mashty",
@@ -1566,7 +1685,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-neurobuddies",
-    "rank": null,
+    "rank": 97,
     "score": null,
     "prize": null,
     "team": "Team NeuroBuddies",
@@ -1583,7 +1702,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-sentinel",
-    "rank": null,
+    "rank": 43,
     "score": null,
     "prize": null,
     "team": "Team Sentinel",
@@ -1600,7 +1719,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "team-structuralsense",
-    "rank": null,
+    "rank": 73,
     "score": null,
     "prize": null,
     "team": "Team StructuralSense",
@@ -1634,7 +1753,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "tibyan-emad-yousif-elryah",
-    "rank": null,
+    "rank": 48,
     "score": null,
     "prize": null,
     "team": "Tibyan Emad Yousif Elryah",
@@ -1651,7 +1770,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "twin-daggers",
-    "rank": null,
+    "rank": 28,
     "score": null,
     "prize": null,
     "team": "Twin Daggers",
@@ -1668,7 +1787,7 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "yash-surjuse",
-    "rank": null,
+    "rank": 49,
     "score": null,
     "prize": null,
     "team": "Yash Surjuse",
