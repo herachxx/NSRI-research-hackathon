@@ -6,7 +6,8 @@
     return Number.isInteger(team.rank) && team.rank >= 1 && team.rank <= 100;
   }).sort(function(a,b){ return a.rank-b.rank; });
   var podiumTeams = published.filter(function(team){ return team.rank <= 3; });
-  var ranks4to25 = published.filter(function(team){ return team.rank >= 4 && team.rank <= 25; });
+  var additionalPrizeTeams = published.filter(function(team){ return team.rank >= 4 && team.rank <= 5; });
+  var ranks6to25 = published.filter(function(team){ return team.rank >= 6 && team.rank <= 25; });
   var ranks26to100 = published.filter(function(team){ return team.rank >= 26 && team.rank <= 100; });
   var archiveOnly = teams.filter(function(team){
     return !Number.isInteger(team.rank) || team.rank < 1 || team.rank > 100;
@@ -69,6 +70,17 @@
     '</article>';
   }
 
+  function additionalPrizeCard(team){
+    return '<article class="podium-card secondary reveal">' +
+      '<div class="rank-disc" aria-label="Rank ' + team.rank + '">#' + team.rank + '</div>' +
+      '<div class="podium-track">' + escapeHtml(team.track) + '</div>' +
+      '<h3>' + escapeHtml(team.team) + '</h3>' +
+      '<p class="project">' + escapeHtml(team.title) + '</p>' +
+      '<div class="prize">Awarded<strong>' + escapeHtml(team.prize) + '</strong></div>' +
+      '<a class="card-link" href="' + profileUrl(team) + '" aria-label="Open rank ' + team.rank + ': ' + escapeHtml(team.team) + ' winner profile"></a>' +
+    '</article>';
+  }
+
   function rankedCard(team){
     return '<article class="ranked-card reveal">' +
       '<span class="ranked-number">#' + team.rank + '</span>' +
@@ -95,8 +107,11 @@
     podium.innerHTML = displayOrder.map(podiumCard).join("");
   }
 
+  var additionalPrizeGrid = document.getElementById("additionalPrizeGrid");
+  if(additionalPrizeGrid) additionalPrizeGrid.innerHTML = additionalPrizeTeams.map(additionalPrizeCard).join("");
+
   var rankedGrid = document.getElementById("rankedGrid");
-  if(rankedGrid) rankedGrid.innerHTML = ranks4to25.map(rankedCard).join("");
+  if(rankedGrid) rankedGrid.innerHTML = ranks6to25.map(rankedCard).join("");
 
   var videoRail = document.getElementById("videoRail");
   if(videoRail){

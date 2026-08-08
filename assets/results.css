@@ -167,6 +167,13 @@ button,input{font:inherit}
 .podium-card .project{color:var(--muted);font-size:.88rem;line-height:1.5}
 .prize{margin-top:20px;font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;font-weight:850;color:#89620c}
 .prize strong{display:block;font-family:Georgia,serif;font-size:2.1rem;letter-spacing:-.04em}
+.additional-prizes{margin-top:28px}
+.additional-prizes-head{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:16px;color:var(--muted);font-size:.7rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+.additional-prizes-head::before,.additional-prizes-head::after{content:"";width:72px;height:1px;background:var(--line)}
+.additional-prize-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:820px;margin-inline:auto}
+.podium-card.secondary{min-height:325px;padding:26px}
+.podium-card.secondary .rank-disc{width:58px;height:58px;font-size:1.12rem}
+.podium-card.secondary h3{font-size:clamp(1.45rem,2.4vw,2rem)}
 .card-link{position:absolute;inset:0;z-index:2;border-radius:inherit}
 .card-link:focus{outline:3px solid var(--blue);outline-offset:4px}
 
@@ -305,7 +312,7 @@ button,input{font:inherit}
   .hero-orbit{max-width:510px;width:90%;margin-inline:auto}
   .metrics-grid{grid-template-columns:repeat(2,1fr)}
   .metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .podium{grid-template-columns:1fr}.podium-card,.podium-card.first{min-height:360px}.podium-card.first{order:-1}
+  .podium{grid-template-columns:1fr}.podium-card,.podium-card.first{min-height:360px}.podium-card.first{order:-1}.podium-card.secondary{min-height:300px}
   .ranked-grid{grid-template-columns:repeat(2,1fr)}
   .finalist-grid{grid-template-columns:repeat(3,1fr)}
   .finalist-card:nth-child(4n+1):nth-last-child(3),.finalist-card:nth-child(4n+1):nth-last-child(3)~.finalist-card{left:auto}
@@ -325,6 +332,7 @@ button,input{font:inherit}
   .float-note.one{right:-5%}.float-note.two{left:-4%}
   .metrics{margin-top:-27px}.metric{padding:20px 17px}.metric strong{font-size:1.8rem}.metric span{font-size:.62rem}
   .section{padding:75px 0}.section-head{display:block}.section-head p:not(.eyebrow){margin-top:18px}
+  .additional-prize-grid{grid-template-columns:1fr}
   .ranked-grid,.finalist-grid,.track-grid,.featured-judges-grid{grid-template-columns:1fr}
   .ranked-card:last-child:nth-child(3n+1){grid-column:auto}
   .video-rail{grid-auto-columns:86vw}
