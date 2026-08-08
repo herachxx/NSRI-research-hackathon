@@ -902,23 +902,6 @@ window.NSRI_TEAMS = [
     "materials": null
   },
   {
-    "slug": "hebbian-learners",
-    "rank": 66,
-    "score": null,
-    "prize": null,
-    "team": "Hebbian Learners",
-    "members": [
-      "Meena Govindarajan, Samuel Abakisi, Patricia Gonzalez, Pavni"
-    ],
-    "track": "Health and Life Sciences",
-    "title": "An Evolutionary-Metabolic Framework Unifying Neurodegeneration, Trauma, and Addiction Through the Lens of Thermodynamic Resource Allocation and Food Insecurity",
-    "summary": "Traditional paradigms treat post-traumatic stress disorder, addiction, and Alzheimer's as separate pathologies. This review unifies neuroenergetics, evolutionary biology, and Hebbian learning to evaluate how food insecurity drives regional metabolic rationing—prioritizing low-cost subcortical survival loops over energy-expensive neocortical networks. Clinical BOLD-fMRI and FDG-PET mouse models provide the empirical baseline for this thermodynamic cost-saving framework. Crucially, this neuroenergetic lens offers a targeted research perspective to map baseline circuit vulnerabilities; it is not an absolute clinical model. In practice, patient presentation, prognosis, and treatment vary across complex…",
-    "paper": null,
-    "deck": null,
-    "video": null,
-    "materials": null
-  },
-  {
     "slug": "ilma-aijaz",
     "rank": 96,
     "score": null,
