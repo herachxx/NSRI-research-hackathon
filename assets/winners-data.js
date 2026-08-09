@@ -1447,18 +1447,20 @@ window.NSRI_TEAMS = [
   },
   {
     "slug": "sukirti-ghosh",
-    "rank": null,
+    "rank": 66,
     "score": null,
     "prize": null,
-    "team": "SUKIRTI GHOSH",
+    "team": "Sukirti Ghosh and Subhashree Mahapatra",
     "members": [
-      "SUBHASHREE MAHAPATRA"
+      "Sukirti Ghosh",
+      "Subhashree Mahapatra"
     ],
     "track": "Health and Life Sciences",
-    "title": "Adaptive Targeted Straital (Putaminal) Stimulation (By Dopamine) Using Intra-Arterial Method In Late Progressive Idiopathic Parkinson's Disease OR Patients not suitable for DBS",
-    "summary": "This project is basically targeted for Patients with Late Progressive Parkinson's Disease or Patients who are experiencing frequent \"ON\" or \"OFF\" Episodes despite adequate administration of Levodopa and Carbidopa with adjuncts like COMT or MAO-B Inhibitors. BASIC UNDERLYING DEFECT IN PARKINSON’S DISEASE: 1)Primary motor cortex → Putamen → Motor Cortex ( Structured Motor Plan) 2)In Parkinson’s Disease, Person has difficulty in initiating the movement for which proper execution doesn’t take place and the patient suffers from Bradykinesia,Postural Instability Rigidity, Resting Tremors. The Main Objective should be Maintaining Stable levels of Dopamine in the Straitum(PUTAMEN) for proper functioning of both…",
-    "paper": null,
-    "deck": null,
+    "title": "Adaptive Targeted Putaminal Stimulation for Parkinson’s Disease",
+    "summary": "This conceptual research project proposes an adaptive neurovascular system for patients with late-stage Parkinson’s disease, particularly those experiencing severe motor fluctuations despite medication or who are unsuitable for deep brain stimulation. The proposed device would deliver dopamine directly to targeted regions of the putamen. Microelectrodes would monitor local field potentials, while dopamine sensors and an adaptive controller would regulate delivery based on the patient’s neural signals and movement response. The goal is to restore more natural basal ganglia signaling, improve movement initiation, reduce rigidity and “ON/OFF” episodes, and potentially decrease dependence on levodopa. This remains an untested theoretical prototype with no human or animal testing.",
+    "details": "The proposed system combines an intra-arterial dopamine-delivery structure, microelectrodes, dopamine sensors, an implanted pump, and an adaptive controller. A dopamine-containing stent would be positioned within a branch of the middle cerebral artery supplying the putamen, with connected microstructures targeting the putamen’s upper-limb and lower-limb motor regions.\n\nThe electrodes would detect changes in corticostriatal neural activity and trigger phasic dopamine delivery at approximately 15 to 30 Hz for 100 to 300 ms, depending on signal strength. A dopamine sensor would continuously monitor the baseline concentration, while a controller connected to a smart device would adjust delivery using recorded movement outcomes.\n\nThe intended outcomes include reducing bradykinesia, rigidity, postural instability, peak-dose dyskinesia, medication-related psychosis, and severe “ON/OFF” fluctuations. All proposed outcomes remain hypothetical. The device has not received ethical or regulatory approval and has not been tested in patients, animals, or laboratory experiments.",
+    "paper": "https://drive.google.com/file/d/17Vf2LK8slDvsRKCircnb0_xUqv83gj9A",
+    "deck": "https://drive.google.com/file/d/16S2ASwzPxTzhiZLA8UvcMKxX5fcHCTop",
     "video": null,
     "materials": null
   },

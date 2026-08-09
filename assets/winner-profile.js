@@ -70,6 +70,14 @@
     (media ? '<iframe class="profile-video" src="' + escapeHtml(media.url) + '" title="' + escapeHtml(team.team) + ' presentation" loading="eager" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' : ''));
   var videoBlock = media ?
     '<div class="profile-card profile-video-card"><p class="eyebrow">Watch the research</p><h2>Presentation video</h2>' + videoPlayer + '</div>' : '';
+  var detailsBlock = team.details ?
+    '<div class="profile-card"><p class="eyebrow">The concept</p><h2>Project details</h2><p class="profile-summary">' + escapeHtml(team.details) + '</p></div>' : '';
+  var resources = [
+    {label:"Research paper",url:safeUrl(team.paper)},
+    {label:"Presentation",url:safeUrl(team.deck)}
+  ].filter(function(item){ return item.url; });
+  var resourcesBlock = resources.length ?
+    '<div class="profile-card"><p class="eyebrow">Project materials</p><h2>Resources</h2><div class="resource-list">' + resources.map(function(item){ return '<a class="resource-link" href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener"><span>' + escapeHtml(item.label) + '</span><span aria-hidden="true">&rarr;</span></a>'; }).join("") + '</div></div>' : '';
 
   var rankLabel = isPublished ? "Rank #" + team.rank : "Research archive";
   root.innerHTML =
@@ -81,9 +89,11 @@
     '</div></section>' +
     '<section class="section"><div class="shell profile-layout"><div>' +
       '<div class="profile-card"><p class="eyebrow">The research</p><h2>Project overview</h2><p class="profile-summary">' + escapeHtml(team.summary || "Project summary coming soon.") + '</p></div>' +
+      detailsBlock +
       videoBlock +
     '</div><aside>' +
       '<div class="profile-card"><p class="eyebrow">The team</p><h2>Researchers</h2><ul class="member-list">' + members.map(function(name){ return '<li>' + escapeHtml(name) + '</li>'; }).join("") + '</ul></div>' +
+      resourcesBlock +
       '<a class="next-profile" href="winner.html?team=' + encodeURIComponent(next.slug) + '"><div><span>Next team</span><strong>' + escapeHtml(next.team) + '</strong></div><b aria-hidden="true">→</b></a>' +
     '</aside></div></section>';
 
